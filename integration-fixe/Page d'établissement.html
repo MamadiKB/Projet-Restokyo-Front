@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResTokyo</title>
+    <link rel="stylesheet" href="./_reset.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="header">
+
+        <section class="header__wrapper">
+        <div class="header__wrapper__title">
+            <img src="./assets/img/mainLogo.png" alt="restokyo logo" class="header__wrapper__title__logo">
+            <h1 class="header__wrapper__title__h1">
+            Restez serein, restaurez-vous, ResTokyo
+            </h1>
+        </div>
+            <section class="slider"></section>
+        </section>
+
+        <section class="header__nav">
+            <div class="nav__wrapper">
+                <nav class="nav">
+                    <img src="./assets/img/mainLogo.png" alt="restokyo logo" class="nav__logo">
+                <ul class="nav__menu">
+                    <li class="nav__item">
+                    <a href="#" class="nav__link">accueil
+                    </a>
+                    </li>
+                    <li class="nav__item">
+                    <a href="#" class="nav__link">
+                        restaurants
+                    </a>
+                    </li>
+                    <li class="nav__item">
+                    <a href="#" class="nav__link">
+                        izakaya
+                    </a>
+                    </li>
+                    <li class="nav__item">
+                    <a href="#" class="nav__link">
+                        nouriture
+                    </a>
+                    </li>
+                    <li class="nav__item">
+                    <a href="#" class="nav__link nav__link__connexion">
+                        connexion
+                    </a>
+                    </li>
+                    <li class="nav__item">
+                    <a href="#" class="nav__link nav__link__inscription">
+                        inscription
+                    </a>
+                    </li>
+                </ul>
+                <h1 class="nav__title">Restez serein, restaurez-vous, ResTokyo</h1>
+                <div class="toggler__icon">
+                    <div class="line__1"></div>
+                    <div class="line__2"></div>
+                    <div class="line__3"></div>
+                </div>
+                </nav>
+            </div>
+        </section>
+        <section class="select">
+            <div class="select_wrapper">
+                <select class="select__quartier" name="quartier" id="quartier">
+                <option selected disabled class="select__quartier__obt">Quel quartier ?</option>
+                <option class="select__quartier__obt" value="1">Harajuku</option>
+                <option class="select__quartier__obt" value="2">Akihabara</option>
+                </select>
+            </div>
+            <div class="select_wrapper">
+                <select class="select__quartier" name="quartier" id="type-etablisseme">
+                    <option selected disabled class="select__quartier__obt">Quel type d'etablissement ?</option>
+                    <option class="select__quartier__obt" value="1">Restaurent</option>
+                    <option class="select__quartier__obt" value="2">Izakaya</option>
+                </select>
+            <div class="select_wrapper">
+                <select class="select__quartier" name="quartier" id="type-nouriture">
+                    <option selected disabled class="select__quartier__obt">Quel type de nouriture ?</option>
+                    <option class="select__quartier__obt" value="1">Ramen</option>
+                    <option class="select__quartier__obt" value="2">Sushi</option>
+                </select>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div class="etablissement">
+            <!-- 
+                .etablissement__info {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-direction: row;
+                } -->
+            <section class="etablissement__info">
+
+                <div class="etablissement__left">
+                    <div class="etablissement__info-name">
+                        <p>Nom de l'établissement</p>
+                    </div>
+                    <div class="etablissement__info-adress">
+                        <p>Adresse de l'établissement</p>
+                        <p>Temps à pied depuis la gare la plus proche</p>
+                    </div>
+                </div>
+                
+                <div class="etablissement__right">
+                    <div class="etablissement__info-type">
+                        <p>Restaurant / Izakaya</p>
+                        <p>Tags de l'établissement</p>
+                    </div>
+                    <div class="etablissement__info-other">
+                        <nav>
+                            <ul>
+                                <li>Jours d'ouvertures</li>
+                                <li>Horaires du midi</li>
+                                <li>Horaires du soir</li>
+                                <li>Prix moyen</li>
+                                <li>Numéro de téléphone</li>
+                                <li>Site web</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="etablissement__picture">
+                <div class="etablissement__picture-slider">
+                    <p>Photo des plats</p>
+                </div>        
+            </section>
+    
+            <section class="etablissement__description">
+                <div class="etablissement__description-
+                detail">
+                    <p>Description de l'établissement</p>
+                </div>
+            </section>
+    
+            <section class="etablissement__comment">
+                
+                    <div class="etablissement__comment-name">
+                        <ul>
+                            <li>Nom de l'utilisateur</li>
+                            <li>Note de l'utilisateur</li>
+                        </ul>
+                    </div>
+                    <div class="etablissement__comment-body">
+                        <p>Commentaire de l'utilisateur</p>
+                    </div>
+                
+            </section>
+        </div>
+    </main>
+    
+    </body>
+      
+          
+    
+    </html>

@@ -1,0 +1,153 @@
+@use 'src/styles/vars';
+
+.nav__wrapper {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 1rem 1rem 0rem 1rem;
+}
+/*--when menu is close--*/
+.nav__wrapper--collapse {
+  border-radius: 1rem 1rem 1rem 1rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 5rem;
+  padding: 1rem;
+
+  &__logo {
+    display: block;
+    width: 5rem;
+  }
+
+  &__title{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    gap: 3rem;
+    top: 6rem;
+    width: 50%;
+    height: 30rem;
+    right: 1rem;
+    padding: 1.5rem;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 0rem 0rem 1rem 1rem;
+    z-index: 1;
+  }
+
+  &__link {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+
+    &:hover {
+    text-shadow: 0 0 10px #FFE0B5,
+                 0 0 20px #FFE0B5,
+                 0 0 40px #FFE0B5,
+                 0 0 80px #FFE0B5,
+                 0 0 120px #FFE0B5,
+                 0 0 160px #FFE0B5;
+    }
+
+    &__connexion {
+      border: 2px solid #77A0A9;
+      border-radius: 0.5rem;
+      transition: .4s;
+
+      &:hover {
+        background-color: #77A0A9;
+        text-shadow: none;
+      }
+    }
+
+    &__inscription {
+      border: 2px solid #C14953;
+      border-radius: 0.5rem;
+      transition: .4s;
+
+      &:hover {
+        background-color: #C14953;
+        text-shadow: none;
+      }
+    }
+  }
+  /*--when menu is close--*/
+  &__menu--collapse {
+    opacity: 0;
+  }
+}
+
+.toggler__icon {
+  display: block;
+}
+
+.toggler__icon div {
+  width: 2rem;
+  height: 0.1rem;
+  background-color: vars.$fontColor;
+  margin: .5rem 0rem;
+}
+
+@media screen and (max-width: 978px) {
+  .nav__link {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 879px) {
+  .nav__wrapper {
+    border-radius: 1rem;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    padding: 1rem;
+
+    &__logo {
+      display: none;
+    }
+    &__title{
+      display: none;
+    }
+    
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+      padding: 1rem;
+      position: relative;
+      top: 0rem;
+      width: 0%;
+      height: 0rem;
+      right: 0rem;
+      background:none
+    }
+    .toggler__icon {
+      display: none;
+    }
+    &__menu--collapse {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 357px) {
+  .nav__title {
+    font-size: 1rem;
+  }
+}
