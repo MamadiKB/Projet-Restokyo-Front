@@ -6,8 +6,8 @@ const Searchbar = () => (
 
   <section className="serchbar">
     <div className="serchbar__btn__wrapper">
-      <button type="submit" className="btn__wrapper__elm">Type d'etablissement</button>
-      <button type="submit" className="btn__wrapper__elm">Type de nouriture</button>
+      <button type="submit" className="btn__wrapper__elm">Établissement</button>
+      <button type="submit" className="btn__wrapper__elm">Spécialités</button>
       <button type="submit" className="btn__wrapper__elm">Quartier</button>
     </div>
     <div className="serchbar__wrapper__form">

@@ -1,8 +1,8 @@
 // == Import
 import ResTokyologo from 'src/assets/img/mainLogo.png';
-import Navbar from 'src/components/Navbar';
-import Slider from 'src/components/Slider';
-import Searchbar from '../Searchbar';
+import Navbar from 'src/components/Header/Navbar';
+import Slider from 'src/components/Header/Slider';
+import Searchbar from 'src/components/Header/Searchbar';
 import './styles.scss';
 
 // == Composant

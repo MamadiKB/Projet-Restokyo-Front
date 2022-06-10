@@ -5,10 +5,10 @@ import './styles.scss';
 
 // == Composant
 const Navbar = () => (
-  <div className="nav__wrapper nav__wrapper--collapse">
+  <div className="nav__wrapper">
     <nav className="nav">
       <img src={ResTokyologo} alt="restokyo logo" className="nav__logo" />
-      <ul className="nav__menu nav__menu--collapse">
+      <ul className="nav__menu">
         <li className="nav__item">
           <a href="#" className="nav__link">accueil
           </a>
@@ -25,7 +25,7 @@ const Navbar = () => (
         </li>
         <li className="nav__item">
           <a href="#" className="nav__link">
-            nouriture
+            nourriture
           </a>
         </li>
         <li className="nav__item">

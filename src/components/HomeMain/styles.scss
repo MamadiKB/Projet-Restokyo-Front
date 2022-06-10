@@ -1,0 +1,173 @@
+.card__wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 1rem #1d2327;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 2rem;
+  text-align: center;
+  background-color: #3A4750;
+  border-radius: 1rem;
+
+  &__wrapper__h3 {
+    font-family: 'Courgette', cursive;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top:1rem ;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+  &__text h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &__text h5 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    padding: 1rem;
+  }
+  &__text p {
+    margin: 1rem;
+  }
+  span {
+    text-align: right;
+  }
+}
+
+.district {
+  display: flex;
+  justify-content:center;
+  float: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 1rem auto;
+  padding: 2rem;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 1rem #1d2327;
+  text-align: center;
+
+  &__ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &__ul li {
+    font-size: 1rem; /**/
+    padding: 0.5rem;
+    margin: 0.5rem;
+    line-height:1rem;
+    border: 1px solid #F2EEE4;
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .card__wrapper__h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 1208px) {
+  .card__wrapper {
+    display: flex;
+    &__h3 {
+      font-size: 2rem;
+      margin-bottom: 0rem;
+    }
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+
+    &__image {
+      width: 55%;
+      border-radius: 1rem 0rem 0rem 1rem;
+    }
+    &__text {
+      height: 100%;
+      width: 50%;
+      padding: 0rem;
+      border-radius: 0rem 1rem 1rem 0rem;
+    }
+    &__wrapper__mode {
+      border-right: 1px solid #F2EEE4;
+    }
+    &__wrapper__add {
+      border-left: 1px solid #F2EEE4;
+    }
+  }
+}
+
+@media screen and (min-width: 1331px) {
+  .district {
+    display: block;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0rem 1rem 0rem 0rem;
+    padding: 1rem;
+    width: 15%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1rem #1d2327;
+
+
+    &__ul {
+      display: block;
+    }
+
+    &__ul li {
+      text-align: center;
+      position: relative;
+      font-size: 1rem; /**/
+      margin: 0.5rem;
+      line-height:1.5rem;
+      border: none;
+    }
+
+    &__ul li::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: #F2EEE4;
+      transform: scale(0);
+      transition: transform 0.2s ease-in-out;
+    }
+    &__ul li:hover:after {
+      transform: scale(0.5);
+    }
+  }
+
+  @media screen and (min-width: 1524px) {
+    .district {
+      padding: 1rem;
+
+      &__ul li {
+        font-size: 1.3rem; /**/
+        line-height: 2rem;
+      }
+    }
+
+
+  }
+
+
+
+ 
+}

@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+ .footer__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  text-decoration: underline;
+}
+.footer__links a {
+  margin: 1rem 0.5rem;
+}
+
+@media screen and (min-width: 879px) {
+  .footer__links a {
+    margin: 2rem 5rem;
+  }
+}

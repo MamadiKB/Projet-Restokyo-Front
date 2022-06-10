@@ -3,6 +3,7 @@
 .nav__wrapper {
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 1rem 1rem 0rem 1rem;
+  margin-top: 1.5rem;
 }
 /*--when menu is close--*/
 .nav__wrapper--collapse {
@@ -26,7 +27,7 @@
     text-align: center;
     font-size: 1.5rem;
     padding: 0.5rem;
-
+    font-family: 'Courgette', cursive;
   }
 
   &__menu {
@@ -36,10 +37,10 @@
     justify-content: space-around;
     position: absolute;
     gap: 3rem;
-    top: 6rem;
+    top: 6.5rem;
+    right: 1.5rem;
     width: 50%;
     height: 30rem;
-    right: 1rem;
     padding: 1.5rem;
     opacity: 1;
     background: rgba(0, 0, 0, 0.9);
@@ -99,9 +100,9 @@
   margin: .5rem 0rem;
 }
 
-@media screen and (max-width: 978px) {
+@media screen and (max-width: 1061px) {
   .nav__link {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 
@@ -116,7 +117,7 @@
     justify-content: center;
     height: 5rem;
     padding: 1rem;
-
+    
     &__logo {
       display: none;
     }
@@ -146,8 +147,8 @@
   }
 }
 
-@media screen and (max-width: 357px) {
+@media screen and (max-width: 374px) {
   .nav__title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
