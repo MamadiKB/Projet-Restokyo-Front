@@ -1,5 +1,7 @@
-// == Import
+// == Imports
+// -- styles
 import './styles.scss';
+// -- imgs
 import img1 from 'src/assets/img/imgSlider.jpg';
 import img2 from 'src/assets/img/imgSlider2.jpg';
 import img3 from 'src/assets/img/imgSlider3.jpg';

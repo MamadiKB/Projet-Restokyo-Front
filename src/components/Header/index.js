@@ -1,8 +1,11 @@
-// == Import
+// == Imports
+// -- components
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 import Navbar from 'src/components/Header/Navbar';
 import Slider from 'src/components/Header/Slider';
 import Searchbar from 'src/components/Header/Searchbar';
+// -- styles
+import 'semantic-ui-css/semantic.min.css';
 import './styles.scss';
 
 // == Composant
