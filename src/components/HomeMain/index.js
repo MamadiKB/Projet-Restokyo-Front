@@ -9,6 +9,7 @@ const HomeMain = () => (
   <main>
     <aside>
       <div className="district">
+        <h2>Quartiers</h2>
         <ul className="district__ul">
           <li><a href="">Ikebukuro</a></li>
           <li><a href="">Ueno</a></li>
@@ -27,7 +28,7 @@ const HomeMain = () => (
     </aside>
     <div className="card__wrapper">
       <div className="card__wrapper__mode">
-        <h3 className="card__wrapper__h3">Les établisement à la mode</h3>
+        <h3 className="card__wrapper__h3">Les établissements à la mode</h3>
         <article className="card">
           <img className="card__image" src={img1} alt="etablissement" />
           <div className="card__text">
@@ -60,7 +61,7 @@ const HomeMain = () => (
         </article>
       </div>
       <div className="card__wrapper__add">
-        <h3 className="card__wrapper__h3">Les dernier ajouts</h3>
+        <h3 className="card__wrapper__h3">Les derniers ajouts</h3>
         <article className="card">
           <img className="card__image" src={img1} alt="etablissement" />
           <div className="card__text">

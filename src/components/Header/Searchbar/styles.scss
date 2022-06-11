@@ -5,51 +5,31 @@
   border-radius: 1rem 1rem 1rem 1rem;
   box-shadow: 0px 0px 1rem #1d2327;
 
-  &__btn__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 0.5rem;
-  }
-
   &__wrapper__form {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
     margin: 1rem;
   }
-}
-
-.btn__wrapper__elm {
-  background: none;
-  width: 7rem;
-  height: 3rem;
-  border: 5px solid #C14953;
-  color: #F2EEE4;
-  position: relative;
-  border-radius: 1rem;
-  margin: 1rem;
-
-  &:hover {
+  &__select__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+  }
+  &__select {
+    margin: 0.5rem;
+    height: 2.5rem;
+    width: 10rem;
+    border: 2px solid #C14953;
+    border-radius: 0.5rem 0.5rem 0.5rem  0.5rem ;
+    background: rgb(19, 19, 19);
     color: #F2EEE4;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 0rem;
-    height: 2.4rem;
-    top: 0rem;
-    left: 0rem;
-    background-color: #C14953;
-    z-index: -1;
-    transition: .4s linear;
-  }
-
-  &:hover::before {
-    width: 6.5rem;
+    text-align: center;
   }
 }
+
+
 
 .wrapper__form__input {
   height: 2rem;
@@ -94,34 +74,5 @@
   .wrapper__form__input {
     height: 3rem;
     width: 25rem;
-  }
-  
-  .btn__wrapper__elm {
-    background: none;
-    width: 9rem;
-    height: 5rem;
-    border: 5px solid #C14953;
-    color: #F2EEE4;
-    position: relative;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    font-family: 'Merriweather Sans', sans-serif;
-    font-size: 1rem;
-
-    &:hover::before {
-      width: 8.5rem;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 0rem;
-      height: 4.4rem;
-      top: 0rem;
-      left: 0rem;
-      background-color: #C14953;
-      z-index: -1;
-      transition: .2s linear;
-    }
   }
 }
