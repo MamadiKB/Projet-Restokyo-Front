@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .serchbar {
   margin-top: 1.5rem;
   padding: 0.5rem;
@@ -17,14 +19,19 @@
     justify-content: space-evenly;
     margin: 0.5rem;
   }
-  &__select {
+  .ui.selection.dropdown {
+    background-color: vars.$mainBackground;
+    color: vars.$fontColor;
+    border: 3px solid vars.$redColor2;
+    border-radius: 1rem;
     margin: 0.5rem;
-    height: 2.5rem;
-    width: 10rem;
-    border: 2px solid #C14953;
-    border-radius: 0.5rem 0.5rem 0.5rem  0.5rem ;
-    background: rgb(19, 19, 19);
-    color: #F2EEE4;
+    text-align: center;
+  }
+  .visible.menu.transition {
+    background-color: vars.$mainBackground;
+  }
+  span.text {
+    color: vars.$fontColor;
     text-align: center;
   }
 }
