@@ -1,26 +1,52 @@
 // == Import
-import { Select } from 'semantic-ui-react';
+import { useSelector } from 'react-redux';
+// -- components semantic-ui-react
+import { Dropdown, Select } from 'semantic-ui-react';
+// -- styles
 import './styles.scss';
 
 // == Composant
 const Searchbar = () => {
-  const countryOptions = [
-    { key: 'af', value: 'af', text: 'Afghanistan' },
-    { key: 'ax', value: 'ax', text: 'Aland Islands' },
-    { key: 'al', value: 'al', text: 'Albania' },
-    { key: 'dz', value: 'dz', text: 'Algeria' },
-    { key: 'as', value: 'as', text: 'American Samoa' },
-    { key: 'ad', value: 'ad', text: 'Andorra' },
-    { key: 'ao', value: 'ao', text: 'Angola' },
+  const districts = useSelector((state) => state.districts);
+  const districtsSelectOption = districts.map((item) => (
+    { key: item.id, value: item.name, text: item.name }
+  ));
+  const establishmentsOptions = [
+    { key: '1', value: 'Restaurant', text: 'Restaurant' },
+    { key: '2', value: 'Izakaya', text: 'Izakaya' },
+  ];
+  const specialityOptions = [
+    { key: '1', value: 'Rament', text: 'Ramen' },
+    { key: '2', value: 'Yakitori', text: 'Yakitori' },
+    { key: '3', value: 'Soba', text: 'Soba' },
+    { key: '4', value: 'Tonkatsu', text: 'Tonkatsu' },
+    { key: '5', value: 'Sushi', text: 'Sushi' },
+    { key: '6', value: 'Tempura', text: 'Tempura' },
   ];
   return (
     <section className="serchbar">
       <div className="serchbar__select__wrapper">
-
-        <Select placeholder="Établissements" options={countryOptions} />
-        <Select placeholder="Quartiers" options={countryOptions} />
-        <Select placeholder="Spécialités" options={countryOptions} />
-
+        <Select
+          placeholder="Établissements"
+          options={establishmentsOptions}
+          onChange={(event) => {
+            console.log(event.target.textContent);
+          }}
+        />
+        <Select
+          placeholder="Quartiers"
+          options={districtsSelectOption}
+          onChange={(event) => {
+            console.log(event.target.textContent);
+          }}
+        />
+        <Select
+          placeholder="Spécialités"
+          options={specialityOptions}
+          onChange={(event) => {
+            console.log(event.target.textContent);
+          }}
+        />
       </div>
       <div className="serchbar__wrapper__form">
         <form className="serchbar__form">

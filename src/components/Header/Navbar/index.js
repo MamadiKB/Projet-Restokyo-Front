@@ -15,17 +15,17 @@ const Navbar = () => (
         </li>
         <li className="nav__item">
           <a href="#" className="nav__link">
-            restaurants
+            Restaurants
           </a>
         </li>
         <li className="nav__item">
           <a href="#" className="nav__link">
-            izakaya
+            Izakaya
           </a>
         </li>
         <li className="nav__item">
           <a href="#" className="nav__link">
-            nourriture
+            Spécialitées
           </a>
         </li>
         <li className="nav__item">

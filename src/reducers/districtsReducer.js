@@ -51,11 +51,11 @@ const initialState = {
   ],
 };
 
-const districtReducer = (state = initialState, action = {}) => {
+const districtsReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default districtReducer;
+export default districtsReducer;

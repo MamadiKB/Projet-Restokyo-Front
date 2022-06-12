@@ -2,7 +2,7 @@ import { legacy_createStore as createStore } from 'redux';
 
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-import reducer from 'src/reducers/districtReducer';
+import reducer from 'src/reducers/districtsReducer';
 
 const store = createStore(
   // reducer
