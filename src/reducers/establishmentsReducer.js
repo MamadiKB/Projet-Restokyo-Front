@@ -1,5 +1,5 @@
 const initialState = {
-  establishments: [
+  establishmentsList: [
     {
       id: 1,
       name: "Schindler's List",

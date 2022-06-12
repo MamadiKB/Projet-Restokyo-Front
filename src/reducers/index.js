@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 
-import districts from './districtsReducer';
-// import establishments from './establishmentsReducer';
+import searchBarReducer from './searchBarReducer';
+import districtsReducer from './districtsReducer';
+import establishmentsReducer from './establishmentsReducer';
 
 const rootReducer = combineReducers({
   // name in state: reducers
-  districts,
+  searchBarReducer,
+  districtsReducer,
+  establishmentsReducer,
 
 });
 

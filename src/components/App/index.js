@@ -1,6 +1,6 @@
 // == Import
 import Header from 'src/components/Header';
-import HomeMain from 'src/components/HomeMain';
+import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 import './styles.scss';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <HomeMain />
+      <Main />
       <Footer />
     </div>
   );

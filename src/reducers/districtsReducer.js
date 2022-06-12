@@ -1,5 +1,5 @@
 const initialState = {
-  districts: [
+  districtsList: [
     {
       id: 1,
       name: 'Shinjuku',

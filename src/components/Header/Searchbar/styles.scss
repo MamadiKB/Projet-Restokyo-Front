@@ -19,6 +19,22 @@
     justify-content: space-evenly;
     margin: 0.5rem;
   }
+  &__submit {
+    display: flex;
+    justify-content: center;
+    &__button {
+      height: 3rem;
+      width: 8rem;
+      font-size: 1.2rem;
+      border: none;
+      outline: none;
+      border-radius: 1rem;
+      margin-left: 0rem;
+      background-color: #C14953;
+      color: #F2EEE4;
+    }
+  }
+
   .ui.selection.dropdown {
     background-color: vars.$mainBackground;
     color: vars.$fontColor;
@@ -38,7 +54,7 @@
 
 
 
-.wrapper__form__input {
+/* .wrapper__form__input {
   height: 2rem;
   border: none;
   outline: none;
@@ -49,7 +65,7 @@
   &:focus {
     border: 0.2rem solid #C14953;;
   }
-}
+} */
 
 .wrapper__form__submit {
   height: 2.07rem;

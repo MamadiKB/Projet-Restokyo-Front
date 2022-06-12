@@ -7,15 +7,16 @@ import img1 from 'src/assets/img/imgSlider.jpg';
 import img2 from 'src/assets/img/imgSlider2.jpg';
 import img3 from 'src/assets/img/imgSlider3.jpg';
 import Aside from 'src/components/Aside';
+// import MainList from 'src/components/Main/MainList';
 
 // == Composant
-const HomeMain = () => {
-  const districts = useSelector((state) => state.districts);
+const Main = () => {
+  const districts = useSelector((state) => state.districtsReducer.districtsList);
   return (
     <main>
 
       <Aside districts={districts} />
-
+      {/* <MainList /> */}
       <div className="card__wrapper">
         <div className="card__wrapper__mode">
           <h3 className="card__wrapper__h3">Les établissements à la mode</h3>
@@ -89,4 +90,4 @@ const HomeMain = () => {
 };
 
 // == Export
-export default HomeMain;
+export default Main;
