@@ -1,6 +1,8 @@
+import { SAVE_ESTABLISHMENTS } from 'src/actions/fetch';
+
 const initialState = {
   establishmentsList: [
-    {
+    /* {
       id: 1,
       name: "Schindler's List",
       type: 'Restaurant',
@@ -169,12 +171,17 @@ const initialState = {
       slug: 'drop-dead-fred',
       picture: 'https://picsum.photos/id/16/450/300',
       district: null,
-    },
+    }, */
   ],
 };
 
 const establishmentsReducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SAVE_ESTABLISHMENTS:
+      return {
+        ...state,
+        establishmentsList: action.establishmentsList,
+      };
     default:
       return state;
   }

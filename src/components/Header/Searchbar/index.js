@@ -15,9 +15,9 @@ import './styles.scss';
 
 // == Composant
 const Searchbar = () => {
-  const districts = useSelector((state) => state.districtsReducer.districtsList);
+  const districtsList = useSelector((state) => state.districtsReducer.districtsList);
   // console.log(districts);
-  const districtsSelectOption = districts.map((item) => (
+  const districtsSelectOption = districtsList.map((item) => (
     { key: item.id, value: item.name, text: item.name }
   ));
   const dispatch = useDispatch();

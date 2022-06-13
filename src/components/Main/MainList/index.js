@@ -1,61 +1,40 @@
 // == Imports
+import PropTypes from 'prop-types';
 // -- styles
 import './styles.scss';
-// -- imgs
-import img1 from 'src/assets/img/imgSlider.jpg';
-import img2 from 'src/assets/img/imgSlider2.jpg';
-import img3 from 'src/assets/img/imgSlider3.jpg';
 
 // == Composant
-const MainList = () => (
+const MainList = ({ listToShow }) => (
   <div className="card__wrapper--list">
-
-    <article className="card--list">
-      <img className="card__image" src={img1} alt="etablissement" />
-      <div className="card__text--list">
-        <h4>nom du restaurants</h4>
-        <h5>type</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, commodi!</p>
-        <span>Note...</span>
-      </div>
-      <div className="list__card__stats" />
-    </article>
-
-    <article className="card--list">
-      <img className="card__image" src={img2} alt="etablissement" />
-      <div className="card__text--list">
-        <h4>nom du restaurants</h4>
-        <h5>type</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, commodi!</p>
-        <span>Note...</span>
-      </div>
-      <div className="list__card__stats" />
-    </article>
-
-    <article className="card--list">
-      <img className="card__image" src={img3} alt="etablissement" />
-      <div className="card__text--list">
-        <h4>nom du restaurants</h4>
-        <h5>type</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, commodi!</p>
-        <span>Note...</span>
-      </div>
-      <div className="list__card__stats" />
-    </article>
-
-    <article className="card--list">
-      <img className="card__image" src={img1} alt="etablissement" />
-      <div className="card__text--list">
-        <h4>nom du restaurants</h4>
-        <h5>type</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, commodi!</p>
-        <span>Note...</span>
-      </div>
-      <div className="list__card__stats" />
-    </article>
-
+    {listToShow.map((item) => (
+      <article key={item.id} className="card--list">
+        <img className="card__image--list" src={item.picture} alt="etablissement" />
+        <div className="card__text--list">
+          <h4>{item.name}</h4>
+          <h5>{item.type}</h5>
+          <p>{item.address}</p>
+          <span>{item.rating}</span>
+        </div>
+        <div className="list__card__stats" />
+      </article>
+    ))}
   </div>
 );
 
+MainList.propTypes = {
+  /** array of object whith tow key required :
+   *   - id: number
+   *   - name: string
+  */
+  listToShow: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      rating: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 // == Export
 export default MainList;

@@ -2,22 +2,24 @@
 
 .nav__wrapper {
   background-color: rgba(0, 0, 0, 0.9);
-  border-radius: 1rem 1rem 0rem 1rem;
+  border-radius: 1rem 1rem 1rem 1rem;
   margin-top: 1.5rem;
   
 }
 /*--when menu is close--*/
-.nav__wrapper--collapse {
-  border-radius: 1rem 1rem 1rem 1rem;
+nav.nav--collapse {
+  border-radius: 1rem;
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.9);
   height: 5rem;
   padding: 1rem;
-
+  border-radius: 1rem 1rem 0rem 1rem;
+  
   &__logo {
     display: block;
     width: 5rem;
@@ -86,7 +88,7 @@
   }
   /*--when menu is close--*/
   &__menu--collapse {
-    opacity: 0;
+    display: none;
   }
 }
 
