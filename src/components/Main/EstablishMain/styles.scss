@@ -1,0 +1,175 @@
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__h3 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 2px #1d2327;
+  }
+
+  & h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__img {
+    max-width: 100%;
+    border-radius: 1rem;
+    margin: 1rem 0rem;
+    box-shadow: 0px 0px 1rem #1d2327;
+  }
+
+  &__info {
+    padding: 1rem;
+
+    &__hours {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0px 0px 1rem #1d2327;
+    }
+
+    &__loc {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0px 0px 1rem #1d2327;
+    }
+
+    &__desc {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0px 0px 1rem #1d2327;
+    }
+    
+    &__hours li {
+      margin: 0.3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .restaurant {
+    flex-direction: row;
+
+    &__top__wrapper {
+      width: 50%;
+    }
+    &__img {
+      max-width: 75%;
+    }
+    &__info {
+      width: 230rem;
+    }
+  }
+  /* .restaurant__info {
+    display: flex;
+    &__hours {
+      width: 33%;
+      margin: 1rem;
+    }
+    &__loc {
+      width: 33%;
+      margin: 1rem;
+    }
+    &__desc {
+      width: 33%;
+      margin: 1rem;
+    }
+  } */
+}
+
+.comments__wrapper__form {
+  margin: 1rem auto;
+}
+
+
+
+
+.comments {
+  border: 3px solid #8e9aa1;
+  border-radius: 1rem;
+  padding: 1rem 1rem 0rem 1rem;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1rem #1d2327;
+
+    &__user {
+      display: flex;
+      align-items: center;
+    }
+
+    &__img {
+      max-width: 2rem;
+      border-radius: 50%;
+      margin:0.5rem;
+    }
+
+    &__username {
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__username span {
+      margin-top: 0.1rem;
+      font-size: 0.8rem;
+      color: #f2eee4a8;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__input {
+      border: 2px rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      height: 5rem;
+      width: 18rem;
+      padding: 0.5rem;
+      color: #F2EEE4;
+      margin-bottom: 0.5rem;
+    }
+    &__submit {
+      border: 2px rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      color: #F2EEE4;
+      height: 3rem;
+      width: 4rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

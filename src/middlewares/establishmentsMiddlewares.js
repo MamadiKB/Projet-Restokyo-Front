@@ -1,17 +1,14 @@
 import axios from 'axios';
 
-import { FETCH_ESTABLISHMENTS, saveEstablishments } from '../actions/fetch';
+import { FETCH_ESTABLISHMENTS_LIST, saveEstablishments } from '../actions/fetch';
 
 const establishmentsMiddlewares = (store) => (next) => (action) => {
-  console.log('on a intercepté une action dans le middleware: ', action);
-
   switch (action.type) {
-    case FETCH_ESTABLISHMENTS:
-      axios.get('http://mickael-zimmermann.vpnuser.lan/A/projet-restokyo-back/public/api/v1/establishments')
+    case FETCH_ESTABLISHMENTS_LIST:
+      axios.get('http://kaba-mamadi.vpnuser.lan/Projet%20Restokyo%20/projet-restokyo-back/public/api/v1/establishments')
         .then((response) => {
-          console.log(response.data);
-
-          store.dispatch(saveEstablishments(response.data));
+          // console.log(response.data);
+          store.dispatch(saveEstablishments(response.data.establishmentsList));
         })
         .catch((error) => {
           console.log(error);
