@@ -12,19 +12,19 @@ const MainList = ({ listToShow }) => {
   // console.log(slug);
   if (slug) {
     return (
-      <div className="card__wrapper--list">
+      <div className="card__list__wrapper">
         {byDistrict.map((item) => (
           <Link to={`${item.slug}`}>
-            <article key={item.id} className="card--list">
-              <img className="card__image--list" src={item.picture} alt="etablissement" />
-              <div className="card__text--list">
+            <article key={item.id} className="card__list">
+              <img className="card__list__image" src={item.picture} alt="etablissement" />
+              <div className="card__list__text">
                 <h4>{item.name}</h4>
                 <h5>{item.type}</h5>
                 {/* <p>{item.district.name}</p> */}
                 <p>{item.address}</p>
                 <span>{item.rating}</span>
               </div>
-              <div className="list__card__stats" />
+              <div className="card__list__stats" />
             </article>
           </Link>
         ))}
@@ -32,19 +32,19 @@ const MainList = ({ listToShow }) => {
     );
   }
   return (
-    <div className="card__wrapper--list">
+    <div className="card__list__wrapper">
       {listToShow.map((item) => (
         <Link to={`${item.slug}`}>
-          <article key={item.id} className="card--list">
-            <img className="card__image--list" src={item.picture} alt="etablissement" />
-            <div className="card__text--list">
+          <article key={item.id} className="card__list">
+            <img className="card__list__image" src={item.picture} alt="etablissement" />
+            <div className="card__list__text">
               <h4>{item.name}</h4>
-              <h5>{item.type}</h5>
-              <p>{item.district.name}</p>
+              <h5>{item.district.name}</h5>
+              <p>{item.type}</p>
               <p>{item.address}</p>
               <span>{item.rating}</span>
             </div>
-            <div className="list__card__stats" />
+            <div className="card__list__stats" />
           </article>
         </Link>
       ))}
