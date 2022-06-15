@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // == Imports
 // -- tool
 import { useSelector } from 'react-redux';
@@ -17,30 +18,41 @@ const Main = () => {
   const districtsList = useSelector((state) => state.districtsReducer.districtsList);
   // get all etablissements
   const etablissementsList = useSelector((state) => state.establishmentsReducer.establishmentsList);
-  // console.log(etablissementsList);
   // -- for restaurantsList
   const restaurantsList = etablissementsList.filter((item) => item.type === 'restaurant');
-  // console.log(restaurantsList);
   // -- for izakayaList
   const izakayaList = etablissementsList.filter((item) => item.type === 'izakaya');
   // -- get 3 last etablissements
   const lastEstablishments = etablissementsList.slice(etablissementsList.length - 3);
-  // console.log(etablissementsList);
-  // console.log(lastEstablishments);
+  // -- for research
+  const researchValue = useSelector((state) => state.searchBarReducer.searchValue);
+  // console.log(researchValue);
+  const searchType = etablissementsList.filter((item) => item.type === researchValue.etablishment);
+  const searchDisTyp = searchType.filter((item) => item.district.name === researchValue.district);
+  // console.log(researchValue);
+  /*   console.log(researchSelect.etablishmentValue); */
+  // console.log(searchDistrict);
   return (
     <main>
       <Aside districtsList={districtsList} />
-      {/* <EstablishMain listToShow={etablissementsList} /> */}
       <Routes>
         <Route path="/" element={<HomeMain lastEstablishments={lastEstablishments} /* bestEtablissementsList={} */ />} />
         <Route path="/:slug" element={<EstablishMain listToShow={etablissementsList}/* bestEtablissementsList={} */ />} />
-        <Route path="restaurants" element={<ListMain listToShow={restaurantsList} />} />
-        <Route path="restaurants/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
-        <Route path="izakaya" element={<ListMain listToShow={izakayaList} />} />
-        <Route path="izakaya/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
-        <Route path="quartiers/:slug" element={<ListMain listToShow={etablissementsList} />} />
-        <Route path="quartiers/:slug/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
-        <Route path="quartiers/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path="restaurant/list" element={<ListMain listToShow={restaurantsList} />} />
+        <Route path="recherch/restaurant/" element={<ListMain listToShow={restaurantsList} />} />
+        <Route path="restaurant/list/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+
+        <Route path="izakaya/list" element={<ListMain listToShow={izakayaList} />} />
+        <Route path="recherch/izakaya/" element={<ListMain listToShow={izakayaList} />} />
+        <Route path="izakaya/list/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+
+        <Route path="quartier/:slug" element={<ListMain listToShow={etablissementsList} />} />
+        <Route path="quartier/:slug/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+
+        <Route path={`recherch/${researchValue.etablishment}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}`} element={<ListMain listToShow={searchDisTyp} />} />
+        <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path={`${researchValue.etablishment}/${researchValue.district}/${researchValue.speciality}`} element={<ListMain listToShow={etablissementsList} />} />
       </Routes>
     </main>
   );

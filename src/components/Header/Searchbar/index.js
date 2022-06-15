@@ -12,10 +12,12 @@ import {
 import { Select } from 'semantic-ui-react';
 // -- styles
 import './styles.scss';
+import { useNavigate } from 'react-router-dom';
 
 // == Composant
 const Searchbar = () => {
   const districtsList = useSelector((state) => state.districtsReducer.districtsList);
+  const researchValue = useSelector((state) => state.searchBarReducer);
   // console.log(districts);
   const districtsSelectOption = districtsList.map((item) => (
     { key: item.id, value: item.name, text: item.name }
@@ -23,8 +25,8 @@ const Searchbar = () => {
   const dispatch = useDispatch();
 
   const establishmentsOptions = [
-    { key: '1', value: 'Restaurant', text: 'Restaurant' },
-    { key: '2', value: 'Izakaya', text: 'Izakaya' },
+    { key: '1', value: 'restaurant', text: 'restaurant' },
+    { key: '2', value: 'izakaya', text: 'izakaya' },
   ];
   const specialityOptions = [
     { key: '1', value: 'Rament', text: 'Ramen' },
@@ -34,11 +36,13 @@ const Searchbar = () => {
     { key: '5', value: 'Sushi', text: 'Sushi' },
     { key: '6', value: 'Tempura', text: 'Tempura' },
   ];
+  const navigate = useNavigate();
   return (
     <section className="serchbar">
       <form onSubmit={(event) => {
         event.preventDefault();
         dispatch(addSelectSearchValue());
+        navigate(`recherch/${researchValue.etablishmentValue}/${researchValue.districtValue}`);
       }}
       >
         <div className="serchbar__select__wrapper">
@@ -74,17 +78,7 @@ const Searchbar = () => {
           <button className="serchbar__submit__button" type="submit">send</button>
         </div>
       </form>
-      {/* <div className="serchbar__wrapper__form">
-        <form className="serchbar__form">
-          <input
-            className="wrapper__form__input"
-            type="text"
-            name=""
-            placeholder="Etablissement..."
-          />
-          <input className="wrapper__form__submit" type="submit" name="" value="Search" />
-        </form>
-      </div> */}
+
     </section>
   );
 };

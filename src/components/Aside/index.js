@@ -17,7 +17,7 @@ const Aside = ({ districtsList }) => {
             <li key={item.id}>
               <Link
                 key={item.id}
-                to={`quartiers/${item.name}`}
+                to={`quartier/${item.name}`}
                 onClick={(event) => {
                   const action = addAsideSelectValue(event.target.textContent);
                   dispatch(action);

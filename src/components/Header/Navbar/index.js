@@ -38,7 +38,7 @@ const Navbar = () => {
           </li>
           <li className="nav__item">
             <Link
-              to="restaurants"
+              to="restaurant/list"
               href="#"
               className="nav__link"
             >
@@ -47,7 +47,7 @@ const Navbar = () => {
           </li>
           <li className="nav__item">
             <Link
-              to="izakaya"
+              to="izakaya/list"
               href="#"
               className="nav__link"
             >

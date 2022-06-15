@@ -8,19 +8,20 @@ import './styles.scss';
 const MainList = ({ listToShow }) => {
   const { slug } = useParams();
   // -- for district display
+  // console.log(listToShow);
   const byDistrict = listToShow.filter((item) => item.district.name === slug);
-  // console.log(slug);
+
   if (slug) {
     return (
       <div className="card__list__wrapper">
         {byDistrict.map((item) => (
-          <Link to={`${item.slug}`}>
+          <Link key={item.id} to={`${item.slug}`}>
             <article key={item.id} className="card__list">
               <img className="card__list__image" src={item.picture} alt="etablissement" />
               <div className="card__list__text">
                 <h4>{item.name}</h4>
                 <h5>{item.type}</h5>
-                {/* <p>{item.district.name}</p> */}
+                <p>{item.district.name}</p>
                 <p>{item.address}</p>
                 <span>{item.rating}</span>
               </div>
@@ -34,7 +35,7 @@ const MainList = ({ listToShow }) => {
   return (
     <div className="card__list__wrapper">
       {listToShow.map((item) => (
-        <Link to={`${item.slug}`}>
+        <Link key={item.id} to={`${item.slug}`}>
           <article key={item.id} className="card__list">
             <img className="card__list__image" src={item.picture} alt="etablissement" />
             <div className="card__list__text">
