@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
 // == Imports
 // -- tool
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { changeSelectEstablishmentValue, changeSelectDistrictValue, addSelectSearchValue } from 'src/actions/app';
 // -- styles
 import './styles.scss';
 // -- components
@@ -10,10 +12,13 @@ import Aside from 'src/components/Aside';
 // -- Home components
 import HomeMain from 'src/components/Main/HomeMain';
 import ListMain from 'src/components/Main/ListMain';
+
 import EstablishMain from './EstablishMain';
+import ConnectModal from '../ConnectModal';
 
 // == Composant
 const Main = () => {
+  const dispatch = useDispatch();
   // -- for Aside
   const districtsList = useSelector((state) => state.districtsReducer.districtsList);
   // get all etablissements
@@ -26,14 +31,26 @@ const Main = () => {
   const lastEstablishments = etablissementsList.slice(etablissementsList.length - 3);
   // -- for research
   const researchValue = useSelector((state) => state.searchBarReducer.searchValue);
-  // console.log(researchValue);
   const searchType = etablissementsList.filter((item) => item.type === researchValue.etablishment);
   const searchDisTyp = searchType.filter((item) => item.district.name === researchValue.district);
-  // console.log(researchValue);
-  /*   console.log(researchSelect.etablishmentValue); */
-  // console.log(searchDistrict);
+
+  // -- usefect for save Ssarch when the page reloads
+  useEffect(() => {
+    const researchSave = JSON.parse(localStorage.getItem('recherch'));
+    console.log(researchSave);
+    const establishAction = changeSelectEstablishmentValue(researchSave.etablishment);
+    const districtsAction = changeSelectDistrictValue(researchSave.district);
+    dispatch(establishAction);
+    dispatch(districtsAction);
+    dispatch(addSelectSearchValue());
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('recherch', JSON.stringify(researchValue));
+  }, [researchValue.etablishment, researchValue.district]);
+
   return (
     <main>
+      <ConnectModal />
       <Aside districtsList={districtsList} />
       <Routes>
         <Route path="/" element={<HomeMain lastEstablishments={lastEstablishments} /* bestEtablissementsList={} */ />} />
@@ -52,7 +69,7 @@ const Main = () => {
         <Route path={`recherch/${researchValue.etablishment}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
         <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}`} element={<ListMain listToShow={searchDisTyp} />} />
         <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
-        <Route path={`${researchValue.etablishment}/${researchValue.district}/${researchValue.speciality}`} element={<ListMain listToShow={etablissementsList} />} />
+        {/* <Route path={`${researchValue.etablishment}/${researchValue.district}/${researchValue.speciality}`} element={<ListMain listToShow={etablissementsList} />} /> */}
       </Routes>
     </main>
   );

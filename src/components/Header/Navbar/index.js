@@ -1,6 +1,6 @@
 // == Import
 import { useDispatch, useSelector } from 'react-redux';
-import { toggelNavMenu } from 'src/actions/app';
+import { toggelNavMenu, toggleConnectModal } from 'src/actions/app';
 import { Link } from 'react-router-dom';
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 
@@ -33,7 +33,7 @@ const Navbar = () => {
               href="#"
               className="nav__link"
             >
-              accueil
+              Accueil
             </Link>
           </li>
           <li className="nav__item">
@@ -60,7 +60,15 @@ const Navbar = () => {
             </a>
           </li> */}
           <li className="nav__item">
-            <a href="#" className="nav__link nav__link__connexion">
+            <a
+              href="#"
+              className="nav__link nav__link__connexion"
+              onClick={(event) => {
+                console.log(event);
+                const action = toggleConnectModal();
+                dispatch(action);
+              }}
+            >
               connexion
             </a>
           </li>
@@ -70,7 +78,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <h1 className="nav__title">Restez serein, restaurez-vous, ResTokyo</h1>
+        <h1 className="nav__title">Restez serein, Restaurez-vous, ResTokyo</h1>
         <div
           className="toggler__icon"
           // eslint-disable-next-line no-unused-vars

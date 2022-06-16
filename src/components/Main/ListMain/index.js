@@ -8,7 +8,6 @@ import './styles.scss';
 const MainList = ({ listToShow }) => {
   const { slug } = useParams();
   // -- for district display
-  // console.log(listToShow);
   const byDistrict = listToShow.filter((item) => item.district.name === slug);
 
   if (slug) {

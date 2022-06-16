@@ -6,7 +6,7 @@ import Header from 'src/components/Header';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 
-import { fetchEstablishments } from 'src/actions/fetch';
+import { fetchEstablishmentsList, fetchDistrictList } from 'src/actions/fetch';
 
 import './styles.scss';
 
@@ -15,8 +15,10 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchEstablishments());
+    dispatch(fetchEstablishmentsList());
+    dispatch(fetchDistrictList());
   }, []);
+
   return (
     <div className="app">
       <Header />

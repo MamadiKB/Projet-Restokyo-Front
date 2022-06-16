@@ -1,7 +1,7 @@
 // == Imports
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import userimg from 'src/assets/img/user.jpg';
+/* import userimg from 'src/assets/img/user.jpg'; */
 // -- styles
 import './styles.scss';
 // -- imgs
@@ -42,7 +42,7 @@ const EstablishMain = ({ listToShow }) => {
         </section>
       ))}
 
-      <section className="comments">
+      {/*       <section className="comments">
         <h4>Commentaires</h4>
         <div className="comments__wrapper__form">
           <form className="comments__form">
@@ -67,7 +67,7 @@ const EstablishMain = ({ listToShow }) => {
           </p>
         </div>
       </section>
-
+ */}
     </div>
   );
 };

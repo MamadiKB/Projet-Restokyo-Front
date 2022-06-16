@@ -28,14 +28,9 @@ const Searchbar = () => {
     { key: '1', value: 'restaurant', text: 'restaurant' },
     { key: '2', value: 'izakaya', text: 'izakaya' },
   ];
-  const specialityOptions = [
+  /*   const specialityOptions = [
     { key: '1', value: 'Rament', text: 'Ramen' },
-    { key: '2', value: 'Yakitori', text: 'Yakitori' },
-    { key: '3', value: 'Soba', text: 'Soba' },
-    { key: '4', value: 'Tonkatsu', text: 'Tonkatsu' },
-    { key: '5', value: 'Sushi', text: 'Sushi' },
-    { key: '6', value: 'Tempura', text: 'Tempura' },
-  ];
+  ]; */
   const navigate = useNavigate();
   return (
     <section className="serchbar">
@@ -64,7 +59,7 @@ const Searchbar = () => {
               dispatch(action);
             }}
           />
-          <Select
+          {/*           <Select
             placeholder="Spécialités"
             options={specialityOptions}
             onChange={(event) => {
@@ -72,7 +67,7 @@ const Searchbar = () => {
               const action = changeSelectSpecialityValue(event.target.textContent);
               dispatch(action);
             }}
-          />
+          /> */}
         </div>
         <div className="serchbar__submit">
           <button className="serchbar__submit__button" type="submit">send</button>

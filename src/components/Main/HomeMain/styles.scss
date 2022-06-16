@@ -58,6 +58,7 @@
 @media screen and (min-width: 900px) {
   .card__wrapper {
     display: flex;
+    justify-content: center;
 
     &__h3 {
       font-size: 2rem;
