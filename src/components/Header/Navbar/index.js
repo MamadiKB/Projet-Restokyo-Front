@@ -1,6 +1,6 @@
 // == Import
 import { useDispatch, useSelector } from 'react-redux';
-import { toggelNavMenu, toggleConnectModal } from 'src/actions/app';
+import { toggelNavMenu, toggleConnectModal, toggleSingInModal } from 'src/actions/app';
 import { Link } from 'react-router-dom';
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 
@@ -64,19 +64,27 @@ const Navbar = () => {
               href="#"
               className="nav__link nav__link__connexion"
               onClick={(event) => {
-                console.log(event);
+                // console.log(event);
                 const action = toggleConnectModal();
                 dispatch(action);
               }}
             >
-              connexion
+              Connexion / Inscription
             </a>
           </li>
-          <li className="nav__item">
-            <a href="#" className="nav__link nav__link__inscription">
+          {/*           <li className="nav__item">
+            <a
+              href="#"
+              className="nav__link nav__link__inscription"
+              onClick={(event) => {
+                console.log(event);
+                const action = toggleSingInModal();
+                dispatch(action);
+              }}
+            >
               inscription
             </a>
-          </li>
+          </li> */}
         </ul>
         <h1 className="nav__title">Restez serein, Restaurez-vous, ResTokyo</h1>
         <div

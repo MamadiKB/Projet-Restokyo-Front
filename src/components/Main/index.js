@@ -12,9 +12,9 @@ import Aside from 'src/components/Aside';
 // -- Home components
 import HomeMain from 'src/components/Main/HomeMain';
 import ListMain from 'src/components/Main/ListMain';
+import EstablishMain from 'src/components/Main/EstablishMain';
+import Modal from 'src/components/Modal';
 
-import EstablishMain from './EstablishMain';
-import ConnectModal from '../ConnectModal';
 
 // == Composant
 const Main = () => {
@@ -37,7 +37,6 @@ const Main = () => {
   // -- usefect for save Ssarch when the page reloads
   useEffect(() => {
     const researchSave = JSON.parse(localStorage.getItem('recherch'));
-    console.log(researchSave);
     const establishAction = changeSelectEstablishmentValue(researchSave.etablishment);
     const districtsAction = changeSelectDistrictValue(researchSave.district);
     dispatch(establishAction);
@@ -50,7 +49,8 @@ const Main = () => {
 
   return (
     <main>
-      <ConnectModal />
+      <Modal />
+
       <Aside districtsList={districtsList} />
       <Routes>
         <Route path="/" element={<HomeMain lastEstablishments={lastEstablishments} /* bestEtablissementsList={} */ />} />
@@ -69,7 +69,6 @@ const Main = () => {
         <Route path={`recherch/${researchValue.etablishment}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
         <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}`} element={<ListMain listToShow={searchDisTyp} />} />
         <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
-        {/* <Route path={`${researchValue.etablishment}/${researchValue.district}/${researchValue.speciality}`} element={<ListMain listToShow={etablissementsList} />} /> */}
       </Routes>
     </main>
   );

@@ -7,7 +7,7 @@ const districtsMiddlewares = (store) => (next) => (action) => {
     case FETCH_DISTRICTS_LIST:
       axios.get('http://kaba-mamadi.vpnuser.lan/Projet%20Restokyo%20/projet-restokyo-back/public/api/v1/districts')
         .then((response) => {
-          console.log(response.data.districts);
+          // console.log(response.data.districts);
           store.dispatch(saveDistricList(response.data.districts));
         })
         .catch((error) => {

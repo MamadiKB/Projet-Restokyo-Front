@@ -2,7 +2,7 @@ import { TOGGEL_NAV_MENU, TOGGLE_CONNECT_MODAL } from '../actions/app';
 
 const initialState = {
   navIsOpen: false,
-  ConnectIsOpen: true,
+  ConnectIsOpen: false,
 };
 
 const headerReducer = (state = initialState, action = {}) => {
