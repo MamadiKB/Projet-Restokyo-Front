@@ -1,6 +1,11 @@
 // == Import
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleConnectModal } from 'src/actions/app';
+import {
+  toggleConnectModal,
+  changeFielfConnect,
+  chanheFieldSingIn,
+  logIn,
+} from 'src/actions/connect';
 
 import Field from 'src/components/Field';
 
@@ -9,10 +14,16 @@ import './styles.scss';
 // == Composant
 const ConnectModal = () => {
   const dispatch = useDispatch();
+  const emailValue = useSelector((state) => state.connectReducer.email);
+  const passwordValue = useSelector((state) => state.connectReducer.password);
 
-  const ConnectToggle = useSelector((state) => state.headerReducer.ConnectIsOpen);
+  const emailSingInValue = useSelector((state) => state.connectReducer.emailSingIn);
+  const passwordSingInValue = useSelector((state) => state.connectReducer.passwordSingIn);
+  const usernameSingInValue = useSelector((state) => state.connectReducer.usernameSingIn);
+
+  const connectToggle = useSelector((state) => state.connectReducer.connectIsOpen);
   let cssConnect = 'conect--off';
-  if (ConnectToggle) {
+  if (connectToggle) {
     cssConnect = 'conect';
   }
 
@@ -37,10 +48,12 @@ const ConnectModal = () => {
             <Field
               identifier="email"
               placeholder="E-mail"
-              label="E-mail"
+              label="E-mail*"
               changeField={(identifier, newValue) => {
-                console.log(identifier, newValue);
+                // console.log(identifier, newValue);
+                dispatch(changeFielfConnect(identifier, newValue));
               }}
+              value={emailValue}
             />
           </div>
 
@@ -48,18 +61,30 @@ const ConnectModal = () => {
             <Field
               identifier="password"
               placeholder="Mot de passe"
-              label="Mot de passe"
+              label="Mot de passe*"
               type="password"
               changeField={(identifier, newValue) => {
-                console.log(identifier, newValue);
+                // console.log(identifier, newValue);
+                dispatch(changeFielfConnect(identifier, newValue));
               }}
+              value={passwordValue}
             />
           </div>
 
           <div className="conect__div">
-            <button className="conect__button" type="submit" value="Connexion">Connexion</button>
+            <button
+              className="conect__button"
+              type="button"
+              value="Connexion"
+              onClick={() => {
+                dispatch(logIn());
+              }}
+            >
+              Connexion
+            </button>
           </div>
         </form>
+        <p className="conect__p">*: Champs obligatoires</p>
       </div>
       <div className="form__wrapper">
         <h4 className="conect__h4">Inscription</h4>
@@ -67,35 +92,41 @@ const ConnectModal = () => {
 
           <div className="conect__div">
             <Field
-              identifier="userName"
+              identifier="usernameSingIn"
               placeholder="Nom d'utilisateur"
-              label="Nom d'utilisateur"
+              label="Nom d'utilisateur*"
               changeField={(identifier, newValue) => {
                 console.log(identifier, newValue);
+                dispatch(chanheFieldSingIn(identifier, newValue));
               }}
+              value={usernameSingInValue}
             />
           </div>
 
           <div className="conect__div">
             <Field
-              identifier="emailSingin"
+              identifier="emailSingIn"
               placeholder="E-mail"
-              label="E-mail"
+              label="E-mail*"
               changeField={(identifier, newValue) => {
-                console.log(identifier, newValue);
+                // console.log(identifier, newValue);
+                dispatch(chanheFieldSingIn(identifier, newValue));
               }}
+              value={emailSingInValue}
             />
           </div>
 
           <div className="conect__div">
             <Field
-              identifier="passwordSingin"
+              identifier="passwordSingIn"
               placeholder="Mot de passe"
-              label="Mot de passe"
+              label="Mot de passe*"
               type="password"
               changeField={(identifier, newValue) => {
-                console.log(identifier, newValue);
+                // console.log(identifier, newValue);
+                dispatch(chanheFieldSingIn(identifier, newValue));
               }}
+              value={passwordSingInValue}
             />
           </div>
 

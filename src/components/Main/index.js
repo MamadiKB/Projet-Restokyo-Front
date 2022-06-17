@@ -15,7 +15,6 @@ import ListMain from 'src/components/Main/ListMain';
 import EstablishMain from 'src/components/Main/EstablishMain';
 import Modal from 'src/components/Modal';
 
-
 // == Composant
 const Main = () => {
   const dispatch = useDispatch();

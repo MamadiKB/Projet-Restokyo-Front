@@ -8,8 +8,6 @@ export const CHANGE_SELECT_ESTABLISHMENT_VALUE = 'CHANGE_SELECT_ESTABLISHMENT_VA
 export const CHANGE_SELECT_SPECIALITY_VALUE = 'CHANGE_SELECT_SPECIALITY_VALUE';
 export const ADD_SELECT_SEARCH_VALUE = 'ADD_SELECT_SEARCH_VALUE';
 
-export const TOGGLE_CONNECT_MODAL = 'TOGGLE_CONNECT_MODAL';
-
 // -- action of aside
 export const ADD_ASIDE_SELECT_VALUE = 'GET_ASIDE_SELECT_VALUE';
 
@@ -47,8 +45,4 @@ export const addAsideSelectValue = (newValue) => ({
   type: ADD_ASIDE_SELECT_VALUE,
   value: newValue,
   /* value: newValue */
-});
-
-export const toggleConnectModal = () => ({
-  type: TOGGLE_CONNECT_MODAL,
 });

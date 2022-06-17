@@ -1,6 +1,7 @@
 // == Import
 import { useDispatch, useSelector } from 'react-redux';
-import { toggelNavMenu, toggleConnectModal, toggleSingInModal } from 'src/actions/app';
+import { toggelNavMenu } from 'src/actions/app';
+import { toggleConnectModal } from 'src/actions/connect';
 import { Link } from 'react-router-dom';
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 
@@ -63,8 +64,7 @@ const Navbar = () => {
             <a
               href="#"
               className="nav__link nav__link__connexion"
-              onClick={(event) => {
-                // console.log(event);
+              onClick={() => {
                 const action = toggleConnectModal();
                 dispatch(action);
               }}

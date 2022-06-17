@@ -22,6 +22,7 @@ const Field = ({
     <div className="field">
       <input
         className="input"
+        autoComplete="off"
         id={identifier}
         placeholder={placeholder}
         name={identifier}
