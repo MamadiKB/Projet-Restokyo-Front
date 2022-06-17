@@ -50,7 +50,6 @@ const ConnectModal = () => {
               placeholder="E-mail"
               label="E-mail*"
               changeField={(identifier, newValue) => {
-                // console.log(identifier, newValue);
                 dispatch(changeFielfConnect(identifier, newValue));
               }}
               value={emailValue}
@@ -64,7 +63,6 @@ const ConnectModal = () => {
               label="Mot de passe*"
               type="password"
               changeField={(identifier, newValue) => {
-                // console.log(identifier, newValue);
                 dispatch(changeFielfConnect(identifier, newValue));
               }}
               value={passwordValue}
@@ -96,7 +94,7 @@ const ConnectModal = () => {
               placeholder="Nom d'utilisateur"
               label="Nom d'utilisateur*"
               changeField={(identifier, newValue) => {
-                console.log(identifier, newValue);
+                // console.log(identifier, newValue);
                 dispatch(chanheFieldSingIn(identifier, newValue));
               }}
               value={usernameSingInValue}

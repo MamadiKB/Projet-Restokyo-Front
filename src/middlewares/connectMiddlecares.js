@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOG_IN } from 'src/actions/connect';
+import { LOG_IN, saveUserToken } from 'src/actions/connect';
 
 const connectMiddlewares = (store) => (next) => (action) => {
   // console.log('action =', action);
@@ -8,14 +8,15 @@ const connectMiddlewares = (store) => (next) => (action) => {
     case LOG_IN: {
       const { email, password } = store.getState().connectReducer;
       axios.post(
-        'http://localhost:3001/login',
+        'http://localhost:8000/api/v1/login_check',
         {
-          email: email,
+          username: email,
           password: password,
         },
       )
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
+          store.dispatch(saveUserToken(response.data.token));
         })
         .catch((error) => {
           console.log(error);
@@ -28,4 +29,3 @@ const connectMiddlewares = (store) => (next) => (action) => {
 };
 
 export default connectMiddlewares;
-// bouclierman@herocorp.io / jennifer

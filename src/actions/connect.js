@@ -3,6 +3,7 @@ export const TOGGLE_CONNECT_MODAL = 'TOGGLE_CONNECT_MODAL';
 export const CHANGE_FIELD_CONNECT = 'CHANGE_FIELD_CONNECT';
 export const CHANGE_FIELD_SING_IN = 'CHANGE_FIELD_SING_IN';
 export const LOG_IN = 'LOG_IN';
+export const SAVE_USER_TOKEN = 'SAVE_USER_TOKEN';
 
 // === action creators
 
@@ -24,4 +25,9 @@ export const chanheFieldSingIn = (identifier, newValue) => ({
 
 export const logIn = () => ({
   type: LOG_IN,
+});
+
+export const saveUserToken = (token) => ({
+  type: SAVE_USER_TOKEN,
+  token: token,
 });

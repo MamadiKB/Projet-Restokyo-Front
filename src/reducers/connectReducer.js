@@ -1,4 +1,9 @@
-import { TOGGLE_CONNECT_MODAL, CHANGE_FIELD_CONNECT, CHANGE_FIELD_SING_IN } from 'src/actions/connect';
+import {
+  TOGGLE_CONNECT_MODAL,
+  CHANGE_FIELD_CONNECT,
+  CHANGE_FIELD_SING_IN,
+  SAVE_USER_TOKEN,
+} from 'src/actions/connect';
 
 const initialState = {
 
@@ -8,9 +13,9 @@ const initialState = {
   // contenu du champ password
   password: '',
 
-  jwt: '',
+  token: null,
 
-  isLoged: false,
+  isLogged: false,
 
   // contenu du champ email
   emailSingIn: '',
@@ -25,8 +30,7 @@ const ConnestReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case TOGGLE_CONNECT_MODAL:
       return {
-        // === copy of state
-        ...state,
+        ...state, // === copy of state
         connectIsOpen: !state.connectIsOpen,
       };
     case CHANGE_FIELD_CONNECT:
@@ -38,6 +42,15 @@ const ConnestReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.identifier]: action.value,
+      };
+    case SAVE_USER_TOKEN:
+      return {
+        ...state,
+        isLogged: true,
+        token: action.token,
+        email: '',
+        password: '',
+        connectIsOpen: false,
       };
 
     default:
