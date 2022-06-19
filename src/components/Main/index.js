@@ -4,16 +4,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
-import { changeSelectEstablishmentValue, changeSelectDistrictValue, addSelectSearchValue } from 'src/actions/app';
+// import { changeSelectEstablishmentValue, changeSelectDistrictValue, addSelectSearchValue } from 'src/actions/app';
 // -- styles
 import './styles.scss';
 // -- components
 import Aside from 'src/components/Aside';
-// -- Home components
+// -- Main components
 import HomeMain from 'src/components/Main/HomeMain';
 import ListMain from 'src/components/Main/ListMain';
 import EstablishMain from 'src/components/Main/EstablishMain';
 import Modal from 'src/components/Modal';
+import { saveWhenRefresh, ifTokenWhenRefresh } from 'src/actions/connect';
 
 // == Composant
 const Main = () => {
@@ -33,8 +34,9 @@ const Main = () => {
   const searchType = etablissementsList.filter((item) => item.type === researchValue.etablishment);
   const searchDisTyp = searchType.filter((item) => item.district.name === researchValue.district);
 
-  // -- usefect for save Ssarch when the page reloads
-  useEffect(() => {
+  const jtk = useSelector((state) => state.connectReducer.token);
+  // -- usefect for save search when the page reloads -- !test!
+  /* useEffect(() => {
     const researchSave = JSON.parse(localStorage.getItem('recherch'));
     const establishAction = changeSelectEstablishmentValue(researchSave.etablishment);
     const districtsAction = changeSelectDistrictValue(researchSave.district);
@@ -44,7 +46,18 @@ const Main = () => {
   }, []);
   useEffect(() => {
     localStorage.setItem('recherch', JSON.stringify(researchValue));
-  }, [researchValue.etablishment, researchValue.district]);
+  }, [researchValue.etablishment, researchValue.district]); */
+  useEffect(() => {
+    const jsontS = JSON.parse(localStorage.getItem('jsont'));
+    dispatch(saveWhenRefresh(jsontS));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('jsont', JSON.stringify(jtk));
+    if (jtk) {
+      dispatch(ifTokenWhenRefresh());
+    }
+  }, [jtk]);
 
   return (
     <main>

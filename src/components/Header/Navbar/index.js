@@ -1,9 +1,10 @@
 // == Import
 import { useDispatch, useSelector } from 'react-redux';
 import { toggelNavMenu } from 'src/actions/app';
-import { toggleConnectModal } from 'src/actions/connect';
+// import { toggleConnectModal } from 'src/actions/connect';
 import { Link } from 'react-router-dom';
 import ResTokyologo from 'src/assets/img/mainLogo.png';
+import ButtonSettings from 'src/components/Header/Navbar/ButtonSettings';
 
 import './styles.scss';
 
@@ -55,12 +56,8 @@ const Navbar = () => {
               Izakaya
             </Link>
           </li>
-          {/*         <li className="nav__item">
-            <a href="#" className="nav__link">
-              Spécialitées
-            </a>
-          </li> */}
-          <li className="nav__item">
+          <ButtonSettings />
+          {/* <li className="nav__item">
             <a
               href="#"
               className="nav__link nav__link__connexion"
@@ -70,19 +67,6 @@ const Navbar = () => {
               }}
             >
               Connexion / Inscription
-            </a>
-          </li>
-          {/*           <li className="nav__item">
-            <a
-              href="#"
-              className="nav__link nav__link__inscription"
-              onClick={(event) => {
-                console.log(event);
-                const action = toggleSingInModal();
-                dispatch(action);
-              }}
-            >
-              inscription
             </a>
           </li> */}
         </ul>

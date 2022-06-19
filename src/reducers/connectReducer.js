@@ -3,6 +3,9 @@ import {
   CHANGE_FIELD_CONNECT,
   CHANGE_FIELD_SING_IN,
   SAVE_USER_TOKEN,
+  SAVE_WHEN_REFRESH,
+  IF_TOKEN_WHEN_REFRESH,
+  LOG_OUT,
 } from 'src/actions/connect';
 
 const initialState = {
@@ -51,6 +54,24 @@ const ConnestReducer = (state = initialState, action = {}) => {
         email: '',
         password: '',
         connectIsOpen: false,
+      };
+    case SAVE_WHEN_REFRESH:
+      return {
+        ...state,
+        token: action.token,
+      };
+    case IF_TOKEN_WHEN_REFRESH:
+      return {
+        ...state,
+        isLogged: true,
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        isLogged: false,
+        token: null,
+        email: '',
+        password: '',
       };
 
     default:

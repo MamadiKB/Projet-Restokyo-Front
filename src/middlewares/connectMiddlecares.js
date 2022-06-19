@@ -15,7 +15,7 @@ const connectMiddlewares = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           store.dispatch(saveUserToken(response.data.token));
         })
         .catch((error) => {

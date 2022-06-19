@@ -48,9 +48,6 @@ const searchBarReducer = (state = initialState, action = {}) => {
       return {
         // === copy of state
         ...state,
-        /* etablishmentValue: '',
-        districtValue: '',
-        specialityValue: '', */
         searchValue: {
           etablishment: state.etablishmentValue,
           district: state.districtValue,

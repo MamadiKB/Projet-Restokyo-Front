@@ -74,7 +74,7 @@ nav.nav--collapse {
       }
     }
 
-    &__inscription {
+    /* &__inscription {
       border: 2px solid #C14953;
       border-radius: 0.5rem;
       transition: .4s;
@@ -83,8 +83,42 @@ nav.nav--collapse {
         background-color: #C14953;
         text-shadow: none;
       }
+    } */
+  }
+
+  &__link__settings {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    transition: .4s;
+  
+    &__profil {
+      border: 2px solid #77A0A9;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      transition: .4s;
+  
+      &:hover {
+        background-color: #77A0A9;
+        text-shadow: none;
+      }
+    }
+  
+    &__logout {
+      border: 2px solid #C14953;
+      padding: 0.5rem;
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      transition: .4s;
+  
+      &:hover {
+        background-color: #C14953;
+        text-shadow: none;
+      }
     }
   }
+
   /*--when menu is close--*/
   &__menu--collapse {
     display: none;
@@ -105,6 +139,14 @@ nav.nav--collapse {
 @media screen and (max-width: 1061px) {
   .nav__link {
     font-size: 1rem;
+
+    &__settings__profil {
+      font-size: 1rem;
+    }
+
+    &__settings__logout {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -154,3 +196,4 @@ nav.nav--collapse {
     margin: 0rem;
   }
 }
+

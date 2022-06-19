@@ -3,7 +3,7 @@
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 import Navbar from 'src/components/Header/Navbar';
 import Slider from 'src/components/Header/Slider';
-import Searchbar from 'src/components/Header/Searchbar';
+// import Searchbar from 'src/components/Header/Searchbar';
 // -- styles
 import 'semantic-ui-css/semantic.min.css';
 import './styles.scss';
@@ -22,7 +22,7 @@ const Header = () => (
     </section>
     <section className="header__nav">
       <Navbar />
-      <Searchbar />
+      {/* <Searchbar /> */}
     </section>
   </header>
 );
