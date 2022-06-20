@@ -32,6 +32,7 @@ export const logIn = () => ({
 export const saveUserToken = (token) => ({
   type: SAVE_USER_TOKEN,
   token: token,
+  user: '',
 });
 
 export const saveWhenRefresh = (token) => ({

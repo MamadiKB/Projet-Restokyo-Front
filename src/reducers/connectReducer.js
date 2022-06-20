@@ -20,6 +20,8 @@ const initialState = {
 
   isLogged: false,
 
+  user: '',
+
   // contenu du champ email
   emailSingIn: '',
   // contenu du champ password
@@ -51,6 +53,7 @@ const ConnestReducer = (state = initialState, action = {}) => {
         ...state,
         isLogged: true,
         token: action.token,
+        user: '',
         email: '',
         password: '',
         connectIsOpen: false,
