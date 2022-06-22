@@ -1,3 +1,4 @@
+// == action imports
 import {
   TOGGLE_CONNECT_MODAL,
   CHANGE_FIELD_CONNECT,
@@ -11,16 +12,16 @@ import {
 const initialState = {
 
   connectIsOpen: false,
-  // contenu du champ email
+  // email feald
   email: '',
   // contenu du champ password
   password: '',
-
+  // JWT
   token: null,
-
+  // -- log status
   isLogged: false,
-
-  user: '',
+  // -- user info
+  user: [],
 
   // contenu du champ email
   emailSingIn: '',

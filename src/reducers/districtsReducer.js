@@ -1,7 +1,10 @@
+// == action imports
 import { SAVE_DISTRICTS_LIST } from 'src/actions/fetch';
 
 const initialState = {
+  // -- selected value on aside
   asideDistrictValue: '',
+  // -- district list from API
   districtsList: [],
 };
 

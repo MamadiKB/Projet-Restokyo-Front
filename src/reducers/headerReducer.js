@@ -1,7 +1,10 @@
+// == action imports
 import { TOGGEL_NAV_MENU } from '../actions/app';
 
 const initialState = {
+  // -- nav menus burger display status
   navIsOpen: false,
+  // -- modal connection/registration display status
   ConnectIsOpen: false,
 };
 
@@ -11,6 +14,7 @@ const headerReducer = (state = initialState, action = {}) => {
       return {
         // === copy of state
         ...state,
+        // -- toggle true/false
         navIsOpen: !state.navIsOpen,
       };
     default:

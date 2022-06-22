@@ -1,10 +1,12 @@
 @use 'src/styles/vars';
 
 .nav__wrapper {
-  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0);
   border-radius: 1rem 1rem 1rem 1rem;
   margin-top: 1.5rem;
-  
 }
 /*--when menu is close--*/
 nav.nav--collapse {
@@ -73,17 +75,6 @@ nav.nav--collapse {
         text-shadow: none;
       }
     }
-
-    /* &__inscription {
-      border: 2px solid #C14953;
-      border-radius: 0.5rem;
-      transition: .4s;
-
-      &:hover {
-        background-color: #C14953;
-        text-shadow: none;
-      }
-    } */
   }
 
   &__link__settings {
@@ -106,14 +97,14 @@ nav.nav--collapse {
     }
   
     &__logout {
-      border: 2px solid #C14953;
+      border: 2px solid vars.$fristColor;
       padding: 0.5rem;
       font-size: 1.5rem;
       border-radius: 0.5rem;
       transition: .4s;
   
       &:hover {
-        background-color: #C14953;
+        background-color: vars.$fristColor;
         text-shadow: none;
       }
     }
@@ -188,6 +179,12 @@ nav.nav--collapse {
       opacity: 1;
     }
   }
+  form.serchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 459px) {
@@ -195,5 +192,39 @@ nav.nav--collapse {
     font-size: 1.1rem;
     margin: 0rem;
   }
+}
+.serchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__select {
+    background-color: #3A4750;
+  }
+
+  &__submit__button {
+    height: 3rem;
+    width: 8rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    background-color: vars.$fristColor;
+    color: #F2EEE4;
+  }
+}
+
+.ui.selection.dropdown.serchbar__select {
+  background-color: #000000;
+  color: white;
+}
+.active.selected.item {
+  background-color: #606366;
+}
+.item {
+  background-color: #606366;
+}
+span.text {
+  color: #000;
 }
 

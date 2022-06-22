@@ -1,8 +1,10 @@
+main {
+  margin-top: 1rem;
+}
+
 .restaurant {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
+  margin: auto;
 
   &__h3 {
     text-align: center;
@@ -25,6 +27,8 @@
 
   &__info {
     padding: 1rem;
+    max-width: 90%;
+    margin: auto;
 
     &__hours {
       background-color: rgba(0, 0, 0, 0.5);
@@ -56,9 +60,9 @@
   }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 1331px) {
   .restaurant {
-    flex-direction: row;
+    width: 70%;
 
     &__top__wrapper {
       width: 50%;
@@ -67,10 +71,17 @@
       max-width: 75%;
     }
     &__info {
-      width: 230rem;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &__wrapper {
+        margin-left: 5rem;
+      }
     }
   }
 }
+
 
 .comments__wrapper__form {
   margin: 1rem auto;

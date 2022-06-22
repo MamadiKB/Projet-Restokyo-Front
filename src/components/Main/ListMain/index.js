@@ -1,6 +1,8 @@
 // == Imports
-import { useParams, Link } from 'react-router-dom';
+// -- tool
 import PropTypes from 'prop-types';
+import { useParams, Link } from 'react-router-dom';
+
 // -- styles
 import './styles.scss';
 
@@ -10,13 +12,18 @@ const MainList = ({ listToShow }) => {
   // -- for district display
   const byDistrict = listToShow.filter((item) => item.district.name === slug);
 
+  // -- if th route have a :slug is for district list
   if (slug) {
     return (
       <div className="card__list__wrapper">
         {byDistrict.map((item) => (
           <Link key={item.id} to={`${item.slug}`}>
+
             <article key={item.id} className="card__list">
               <img className="card__list__image" src={item.picture} alt="etablissement" />
+              {item.tags.map((tag) => (
+                <p key={tag.id} className="card__list__tags">{tag.name}</p>
+              ))}
               <div className="card__list__text">
                 <h4>{item.name}</h4>
                 <h5>{item.type}</h5>
@@ -37,6 +44,9 @@ const MainList = ({ listToShow }) => {
         <Link key={item.id} to={`${item.slug}`}>
           <article key={item.id} className="card__list">
             <img className="card__list__image" src={item.picture} alt="etablissement" />
+            {item.tags.map((tag) => (
+              <p key={tag.id} className="card__list__tags">{tag.name}</p>
+            ))}
             <div className="card__list__text">
               <h4>{item.name}</h4>
               <h5>{item.district.name}</h5>
@@ -53,9 +63,12 @@ const MainList = ({ listToShow }) => {
 };
 
 MainList.propTypes = {
-  /** array of object whith tow key required :
-   *   - id: number
-   *   - name: string
+  /** array of object all is required :
+   *  - id: number
+   *  - name: string
+   *  - address: string
+   *  - picture: string
+   *  - rating: string
   */
   listToShow: PropTypes.arrayOf(
     PropTypes.shape({

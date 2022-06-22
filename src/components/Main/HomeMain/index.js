@@ -1,9 +1,9 @@
 // == Imports
-import { Link } from 'react-router-dom';
+// -- tool
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // -- styles
 import './styles.scss';
-// -- imgs
 
 // == Composant
 const HomeMain = ({ lastEstablishments, bestEstablishmentsList }) => (
@@ -14,7 +14,6 @@ const HomeMain = ({ lastEstablishments, bestEstablishmentsList }) => (
         <Link key={item.id} to={item.slug}>
           <article key={item.id} className="card">
             <img className="card__image" src={item.picture} alt="etablissement" />
-            <p>oui!</p>
             <div className="card__text">
               <h4>{item.name}</h4>
               <h5>{item.type}</h5>
@@ -47,9 +46,12 @@ const HomeMain = ({ lastEstablishments, bestEstablishmentsList }) => (
 );
 
 HomeMain.propTypes = {
-  /** array of object whith tow key required :
-   *   - id: number
-   *   - name: string
+  /** array of object ( 3 last Establishments add ) all is required :
+   *  - id: number
+   *  - name: string
+   *  - address: string
+   *  - picture: string
+   *  - rating: string
   */
   lastEstablishments: PropTypes.arrayOf(
     PropTypes.shape({
@@ -60,6 +62,13 @@ HomeMain.propTypes = {
       rating: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  /** array of object ( 3 best Establishments rate ) all is required :
+   *  - id: number
+   *  - name: string
+   *  - address: string
+   *  - picture: string
+   *  - rating: string
+  */
   bestEstablishmentsList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

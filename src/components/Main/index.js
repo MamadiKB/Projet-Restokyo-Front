@@ -3,69 +3,61 @@
 // -- tool
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-// import { changeSelectEstablishmentValue, changeSelectDistrictValue, addSelectSearchValue } from 'src/actions/app';
-// -- styles
-import './styles.scss';
+
 // -- components
 import Aside from 'src/components/Aside';
 // -- Main components
 import HomeMain from 'src/components/Main/HomeMain';
 import ListMain from 'src/components/Main/ListMain';
+import TagsListMain from 'src/components/Main/TagsListMain';
 import EstablishMain from 'src/components/Main/EstablishMain';
+// -- styles
+import './styles.scss';
+
 // == Composant
 const Main = () => {
-  // const dispatch = useDispatch();
   // -- for Aside
   const districtsList = useSelector((state) => state.districtsReducer.districtsList);
   // get all etablissements
-  const etablissementsList = useSelector((state) => state.establishmentsReducer.establishmentsList);
-  // -- for restaurantsList
-  const restaurantsList = etablissementsList.filter((item) => item.type === 'restaurant');
-  // -- for izakayaList
-  const izakayaList = etablissementsList.filter((item) => item.type === 'izakaya');
-  // -- get 3 last etablissements
-  const lastEstablishments = etablissementsList.slice(etablissementsList.length - 3);
+  const etablishmentsList = useSelector((state) => state.establishmentsReducer.establishmentsList);
   // -- get 3 best etablissements
   const bestEstablishmentsList = useSelector((state) => state.establishmentsReducer.bestEstablishmentsList);
-  console.log(bestEstablishmentsList);
-  // -- for research
-  const researchValue = useSelector((state) => state.searchBarReducer.searchValue);
-  const searchType = etablissementsList.filter((item) => item.type === researchValue.etablishment);
-  const searchDisTyp = searchType.filter((item) => item.district.name === researchValue.district);
+  // get all tags
+  const tagsList = useSelector((state) => state.tagsReducer.tagsList);
 
-  // -- usefect for save search when the page reloads -- !test!
-  /* useEffect(() => {
-    const researchSave = JSON.parse(localStorage.getItem('recherch'));
-    const establishAction = changeSelectEstablishmentValue(researchSave.etablishment);
-    const districtsAction = changeSelectDistrictValue(researchSave.district);
-    dispatch(establishAction);
-    dispatch(districtsAction);
-    dispatch(addSelectSearchValue());
-  }, []);
-  useEffect(() => {
-    localStorage.setItem('recherch', JSON.stringify(researchValue));
-  }, [researchValue.etablishment, researchValue.district]); */
+  // -- for restaurantsList
+  const restaurantsList = etablishmentsList.filter((item) => item.type === 'restaurant');
+  // -- for izakayaList
+  const izakayaList = etablishmentsList.filter((item) => item.type === 'izakaya');
+  // -- slice all etablishmentsList for get 3 last etablissements
+  const lastEstablishments = etablishmentsList.slice(etablishmentsList.length - 3);
+
+  // -- for research by tags
+
+  const researchValue = useSelector((state) => state.searchBarReducer.searchValue.speciality);
+  const tagToShow = tagsList.filter((item) => item.slug === researchValue);
+  const tagList = tagToShow.map((item) => item.establishments.filter((e) => e.status === 1));
 
   return (
     <main>
       <Aside districtsList={districtsList} />
       <Routes>
+
         <Route path="/" element={<HomeMain lastEstablishments={lastEstablishments} bestEstablishmentsList={bestEstablishmentsList} />} />
-        <Route path="/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path="/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
+
         <Route path="restaurant/list" element={<ListMain listToShow={restaurantsList} />} />
-        <Route path="recherch/restaurant/" element={<ListMain listToShow={restaurantsList} />} />
-        <Route path="restaurant/list/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path="restaurant/list/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
 
         <Route path="izakaya/list" element={<ListMain listToShow={izakayaList} />} />
-        <Route path="recherch/izakaya/" element={<ListMain listToShow={izakayaList} />} />
-        <Route path="izakaya/list/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path="izakaya/list/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
 
-        <Route path="quartier/:slug" element={<ListMain listToShow={etablissementsList} />} />
-        <Route path="quartier/:slug/:slug" element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path="quartier/:slug" element={<ListMain listToShow={etablishmentsList} />} />
+        <Route path="quartier/:slug/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
 
-        <Route path={`recherch/${researchValue.etablishment}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
-        <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}`} element={<ListMain listToShow={searchDisTyp} />} />
-        <Route path={`recherch/${researchValue.etablishment}/${researchValue.district}/:slug`} element={<EstablishMain listToShow={etablissementsList} />} />
+        <Route path={`tags/${researchValue}`} element={<TagsListMain listToShow={tagList} />} />
+        <Route path={`tags/${researchValue}/:slug/list/:slug`} element={<EstablishMain listToShow={etablishmentsList} />} />
+
       </Routes>
     </main>
   );

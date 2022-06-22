@@ -1,5 +1,5 @@
 import axios from 'axios';
-import jwt from 'jwt-decode';
+// import jwt from 'jwt-decode';
 import { LOG_IN, saveUserToken } from 'src/actions/connect';
 
 const connectMiddlewares = (store) => (next) => (action) => {
@@ -9,7 +9,7 @@ const connectMiddlewares = (store) => (next) => (action) => {
     case LOG_IN: {
       const { email, password } = store.getState().connectReducer;
       axios.post(
-        'http://kaba-mamadi.vpnuser.lan/Projet%20Restokyo%20/projet-restokyo-back/public/api/v1/login_check',
+        'http://localhost:8000/public/api/v1/login_check',
         {
           username: email,
           password: password,
@@ -17,13 +17,14 @@ const connectMiddlewares = (store) => (next) => (action) => {
       )
         .then((response) => {
           // console.log(response.data);
-          const { token } = response.data;
-          const user = jwt(token);
-          console.log(user);
+          // const { token } = response.data;
+          // const user = jwt(token);
+          // console.log(user);
           store.dispatch(saveUserToken(response.data.token));
         })
+        // eslint-disable-next-line no-unused-vars
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     }

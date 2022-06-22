@@ -1,7 +1,8 @@
 // == Import
-
+// -- tool
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleConnectModal, logOut } from 'src/actions/connect';
+// -- styles
 import './styles.scss';
 
 // == Composant

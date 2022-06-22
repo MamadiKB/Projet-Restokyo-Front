@@ -30,7 +30,7 @@
       outline: none;
       border-radius: 1rem;
       margin-left: 0rem;
-      background-color: #C14953;
+      background-color: vars.$fristColor;
       color: #F2EEE4;
     }
   }
@@ -52,21 +52,6 @@
   }
 }
 
-
-
-/* .wrapper__form__input {
-  height: 2rem;
-  border: none;
-  outline: none;
-  padding: 0rem 1rem;
-  border-radius: 1rem 0rem 0rem 1rem;
-  margin-right: 0rem;
-
-  &:focus {
-    border: 0.2rem solid #C14953;;
-  }
-} */
-
 .wrapper__form__submit {
   height: 2.07rem;
   width: 4rem;
@@ -74,11 +59,11 @@
   outline: none;
   border-radius: 0rem 1rem 1rem 0rem;
   margin-left: 0rem;
-  background-color: #C14953;
-  color: #F2EEE4;
+  background-color: vars.$fristColor;
+  color: vars.$fontColor;
 
   &:hover {
-    background-color: #c26068;
+    background-color: vars.$hoverFristC;
   }
 }
 

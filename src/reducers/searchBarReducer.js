@@ -1,4 +1,7 @@
-// == import action type
+/** Use for search by tag,
+ the other values are for the compose search bar which is in beta */
+
+// == action imports
 import {
   CHANGE_SELECT_DISTRICT_VALUE,
   CHANGE_SELECT_ESTABLISHMENT_VALUE,
@@ -7,11 +10,11 @@ import {
 } from '../actions/app';
 
 const initialState = {
-  // value of etablishment Select
+  // -- value of etablishment Select
   etablishmentValue: '',
-  // value of District Select
+  // -- value of District Select
   districtValue: '',
-  // value of Speciality Select
+  // -- value of Speciality Select
   specialityValue: '',
 
   searchValue: {

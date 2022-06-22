@@ -1,16 +1,22 @@
 // == Import
+// -- tool
 import { useDispatch, useSelector } from 'react-redux';
-import { toggelNavMenu } from 'src/actions/app';
-// import { toggleConnectModal } from 'src/actions/connect';
-import { Link } from 'react-router-dom';
+import { Select } from 'semantic-ui-react';
+import { Link, useNavigate } from 'react-router-dom';
+// -- actions
+import { toggelNavMenu, changeSelectSpecialityValue, addSelectSearchValue } from 'src/actions/app';
+// -- components
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 import ButtonSettings from 'src/components/Header/Navbar/ButtonSettings';
-
+// -- styles
 import './styles.scss';
 
 // == Composant
 const Navbar = () => {
   const toggelNav = useSelector((state) => state.headerReducer.navIsOpen);
+  const tagsList = useSelector((state) => state.tagsReducer.tagsList);
+  const researchValue = useSelector((state) => state.searchBarReducer);
+
   let cssNav = 'nav nav--collapse';
   let cssNavMenu = 'nav__menu nav__menu--collapse';
   if (toggelNav) {
@@ -22,8 +28,12 @@ const Navbar = () => {
     cssNavMenu = 'nav__menu nav__menu--collapse';
   }
 
-  const dispatch = useDispatch();
+  const tagsSelectOption = tagsList.map((item) => (
+    { key: item.id, value: item.name, text: item.slug }
+  ));
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <div className="nav__wrapper">
       <nav className={cssNav}>
@@ -57,19 +67,8 @@ const Navbar = () => {
             </Link>
           </li>
           <ButtonSettings />
-          {/* <li className="nav__item">
-            <a
-              href="#"
-              className="nav__link nav__link__connexion"
-              onClick={() => {
-                const action = toggleConnectModal();
-                dispatch(action);
-              }}
-            >
-              Connexion / Inscription
-            </a>
-          </li> */}
         </ul>
+
         <h1 className="nav__title">Restez serein, Restaurez-vous, ResTokyo</h1>
         <div
           className="toggler__icon"
@@ -84,6 +83,26 @@ const Navbar = () => {
           <div className="line__3" />
         </div>
       </nav>
+      <form
+        className="serchbar"
+        onSubmit={(event) => {
+          event.preventDefault();
+          dispatch(addSelectSearchValue());
+          localStorage.setItem('recherch', JSON.stringify(researchValue.specialityValue));
+          navigate(`tags/${researchValue.specialityValue}`);
+        }}
+      >
+        <Select
+          className="serchbar__select"
+          placeholder="Tags"
+          options={tagsSelectOption}
+          onChange={(event) => {
+            const action = changeSelectSpecialityValue(event.target.textContent);
+            dispatch(action);
+          }}
+        />
+        <button className="serchbar__submit__button" type="submit">Rechercher</button>
+      </form>
     </div>
   );
 };

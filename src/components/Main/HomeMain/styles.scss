@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .card__wrapper {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 1rem 1rem 1rem 1rem;
@@ -13,7 +15,7 @@
   justify-content: flex-end;
   margin: 2rem;
   text-align: center;
-  background-color: #3A4750;
+  background-color: vars.$mainBackground;
   border-radius: 1rem;
 
   &__wrapper__h3 {
@@ -69,7 +71,6 @@
     display: flex;
     flex-direction: column;
     &__image {
-      /* width: 100%; */
       border-radius: 1rem 1rem 0rem 0rem;
     }
     &__text {
@@ -79,10 +80,12 @@
       border-radius: 0rem 1rem 1rem 0rem;
     }
     &__wrapper__mode {
-      border-right: 1px solid #F2EEE4;
+      border-right: 1px solid vars.$fontColor;
+      width: 50%;
     }
     &__wrapper__add {
-      border-left: 1px solid #F2EEE4;
+      border-left: 1px solid vars.$fontColor;
+      width: 50%;
     }
   }
 }

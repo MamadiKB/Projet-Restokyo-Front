@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .field {
   margin: 2rem 0;
   position: relative;
@@ -22,12 +24,8 @@
     border: 2px solid black;
     font-size: 1.2em;
     
-    
     &:focus {
-      border-color: #C14953;
-/*       & + .label {
-        color: #f0f;
-      } */
+      border-color: vars.$fristColor;
     }
   }
 }

@@ -1,7 +1,10 @@
+// == action imports
 import { SAVE_ESTABLISHMENTS_LIST, SAVE_BEST_ESTABLISHMENTS_LIST } from 'src/actions/fetch';
 
 const initialState = {
+  // -- establishments list from API
   establishmentsList: [],
+  // -- best establishments list from API
   bestEstablishmentsList: [],
 };
 

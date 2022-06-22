@@ -1,8 +1,11 @@
 // == Import
-import { useDispatch } from 'react-redux';
-import { addAsideSelectValue } from 'src/actions/app';
-import { Link } from 'react-router-dom';
+// -- tool
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+// -- actions
+import { addAsideSelectValue } from 'src/actions/app';
+// -- styles
 import './styles.scss';
 
 // == Composant

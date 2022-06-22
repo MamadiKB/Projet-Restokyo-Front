@@ -11,8 +11,8 @@ import App from 'src/components/App';
 import store from './store';
 
 // == Render
-// 1. Élément React racine (celui qui contient l'ensemble de l'app)
-//    => crée une structure d'objets imbriqués (DOM virtuel)
+// 1. Élément React racine
+//    => creates a structure of nested objects (virtual DOM)
 const rootReactElement = (
   <Provider store={store}>
     <BrowserRouter>
@@ -20,7 +20,7 @@ const rootReactElement = (
     </BrowserRouter>
   </Provider>
 );
-// 2. La cible du DOM (là où la structure doit prendre vie dans le DOM)
+// 2. The DOM target (where the structure should come to life in the DOM)
 const target = document.getElementById('root');
-// 3. Déclenchement du rendu de React (virtuel) => DOM (page web)
+// 3. React rendering trigger (virtual) => DOM (web page)
 render(rootReactElement, target);

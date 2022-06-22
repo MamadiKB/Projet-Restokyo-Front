@@ -1,17 +1,18 @@
 import axios from 'axios';
 
-import { FETCH_ESTABLISHMENTS_LIST, saveEstablishmentsList } from '../actions/fetch';
+import { FETCH_ESTABLISHMENTS_LIST, saveEstablishmentsList } from 'src/actions/fetch';
 
 const establishmentsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_ESTABLISHMENTS_LIST:
-      axios.get('http://kaba-mamadi.vpnuser.lan/Projet%20Restokyo%20/projet-restokyo-back/public/api/v1/establishments')
+      axios.get('http://localhost:8000/public/api/v1/establishments')
         .then((response) => {
           // console.log(response.data.establishmentsList);
           store.dispatch(saveEstablishmentsList(response.data.establishmentsList));
         })
+        // eslint-disable-next-line no-unused-vars
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
 

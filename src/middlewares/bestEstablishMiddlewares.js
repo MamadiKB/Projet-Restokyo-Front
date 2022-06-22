@@ -1,17 +1,18 @@
+// == Imports
 import axios from 'axios';
-
-import { FETCH_BEST_ESTABLISHMENTS_LIST, saveBestEstablishmentsList } from '../actions/fetch';
+// -- actions
+import { FETCH_BEST_ESTABLISHMENTS_LIST, saveBestEstablishmentsList } from 'src/actions/fetch';
 
 const establishmentsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_BEST_ESTABLISHMENTS_LIST:
-      axios.get('http://mickael-zimmermann.vpnuser.lan/A/projet-restokyo-back/public/api/v1/establishments/best')
+      axios.get('http://localhost:8000/public/api/v1/establishments/best')
         .then((response) => {
-          console.log(response.data.establishmentsList);
           store.dispatch(saveBestEstablishmentsList(response.data.establishmentsList));
         })
+        // eslint-disable-next-line no-unused-vars
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
 

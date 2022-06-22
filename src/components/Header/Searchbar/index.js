@@ -18,7 +18,7 @@ import { useNavigate } from 'react-router-dom';
 const Searchbar = () => {
   const districtsList = useSelector((state) => state.districtsReducer.districtsList);
   const researchValue = useSelector((state) => state.searchBarReducer);
-  // console.log(districts);
+
   const districtsSelectOption = districtsList.map((item) => (
     { key: item.id, value: item.name, text: item.name }
   ));

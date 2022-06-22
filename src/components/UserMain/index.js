@@ -1,5 +1,5 @@
 // == Imports
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // -- tempo
 import imgUser from 'src/assets/img/user.jpg';
 import imgFav from 'src/assets/img/imgSlider.jpg';
@@ -21,7 +21,7 @@ const UserMain = () => (
         <ul>
           <li>nom</li>
           <li>prenom</li>
-          <li>date de naisence</li>
+          <li>age</li>
           <li>Email</li>
         </ul>
         <button className="card__user__edit" type="button">edit</button>
