@@ -8,6 +8,7 @@ import bestEstablishMiddlewares from 'src/middlewares/bestEstablishMiddlewares';
 import districtsMiddlewares from 'src/middlewares/districtsMiddlewares';
 import tagsMiddlewares from 'src/middlewares/tagsMiddlewares';
 import connectMiddlewares from 'src/middlewares/connectMiddlewares';
+import singInMiddlewares from 'src/middlewares/singInMiddlewares';
 import reducer from 'src/reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -19,6 +20,7 @@ const enhancers = composeEnhancers(
     districtsMiddlewares,
     tagsMiddlewares,
     connectMiddlewares,
+    singInMiddlewares,
   ),
 );
 

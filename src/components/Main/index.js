@@ -13,6 +13,7 @@ import TagsListMain from 'src/components/Main/TagsListMain';
 import EstablishMain from 'src/components/Main/EstablishMain';
 // -- styles
 import './styles.scss';
+import UserMain from '../UserMain';
 
 // == Composant
 const Main = () => {
@@ -24,7 +25,7 @@ const Main = () => {
   const bestEstablishmentsList = useSelector((state) => state.establishmentsReducer.bestEstablishmentsList);
   // get all tags
   const tagsList = useSelector((state) => state.tagsReducer.tagsList);
-
+  const userInfo = useSelector((state) => state.connectReducer.user);
   // -- for restaurantsList
   const restaurantsList = etablishmentsList.filter((item) => item.type === 'restaurant');
   // -- for izakayaList
@@ -57,6 +58,8 @@ const Main = () => {
 
         <Route path={`tags/${researchValue}`} element={<TagsListMain listToShow={tagList} />} />
         <Route path={`tags/${researchValue}/:slug/list/:slug`} element={<EstablishMain listToShow={etablishmentsList} />} />
+
+        <Route path={`mon-compte/${userInfo.pseudo}`} element={<UserMain />} />
 
       </Routes>
     </main>

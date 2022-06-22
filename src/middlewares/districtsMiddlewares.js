@@ -5,7 +5,7 @@ import { FETCH_DISTRICTS_LIST, saveDistricList } from 'src/actions/fetch';
 const districtsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_DISTRICTS_LIST:
-      axios.get('http://localhost:8000/public/api/v1/districts')
+      axios.get('http://localhost:8000/api/v1/districts')
         .then((response) => {
           // console.log(response.data.districts);
           store.dispatch(saveDistricList(response.data.districts));

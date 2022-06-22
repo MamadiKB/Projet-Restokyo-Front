@@ -5,6 +5,7 @@ import {
   changeFielfConnect,
   chanheFieldSingIn,
   logIn,
+  singIn,
 } from 'src/actions/connect';
 
 import Field from 'src/components/Field';
@@ -14,6 +15,7 @@ import './styles.scss';
 // == Composant
 const ConnectModal = () => {
   const dispatch = useDispatch();
+
   const emailValue = useSelector((state) => state.connectReducer.email);
   const passwordValue = useSelector((state) => state.connectReducer.password);
 
@@ -129,7 +131,17 @@ const ConnectModal = () => {
           </div>
 
           <div className="singin__div">
-            <button className="singin__button" type="submit" value="singin">Connexion</button>
+            <button
+              className="singin__button"
+              type="submit"
+              value="singin"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(singIn());
+              }}
+            >
+              Inscription
+            </button>
           </div>
         </form>
         <p className="conect__p">*: Champs obligatoires</p>
