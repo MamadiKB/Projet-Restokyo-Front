@@ -1,0 +1,101 @@
+@use 'src/styles/vars';
+
+.card__list__wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 1rem #1d2327;
+  display: flex;
+  flex-direction: column;
+}
+.card__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 2rem;
+  text-align: center;
+  background-color: vars.$mainBackground;
+  border-radius: 1rem;
+  transition: .4s;
+
+  &__image {
+    width: 100%;
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  &__tags {
+    position: absolute;
+    background-color: vars.$fristColor ;
+    left: 0rem;
+    width: 10rem;
+    padding: 0.5rem;
+    border-radius: 1rem 0rem 1rem 0rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0 15px #ffe0b554,
+                 0 0 25px #ffe0b554,
+                 0 0 30px #ffe0b554,
+  }
+}
+
+@media screen and (min-width: 725px) {
+
+  .card__list {
+    flex-direction: row;
+
+    &__image {
+      width: 50%;
+      border-radius: 1rem 0rem 0rem 1rem;
+    }
+
+    &__text {
+      height: 100%;
+      width: 50%;
+      padding: 0rem;
+      border-radius: 0rem 1rem 1rem 0rem;
+    }
+    &__tags {
+      top: -0.1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1205px) {
+
+  .card__list {
+
+    &__image {
+      width: 50%;
+      border-radius: 1rem 0rem 0rem 1rem;
+    }
+
+    &__text {
+      height: 100%;
+      width: 50%;
+      padding: 0rem;
+      border-radius: 0rem 1rem 1rem 0rem;
+      
+      & h4 {
+        font-size: 2.5rem;
+      }
+      & h5 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+

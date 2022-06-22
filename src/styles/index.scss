@@ -1,18 +1,19 @@
 @use 'reset';
 @use 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&display=swap');
 
-body {
-  font-family: sans-serif;
+html body {
+  background-color: vars.$mainBackground ;
+  min-height: 100vh;
+  margin: 1.5rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  background-color: vars.$mainBackground;
+  color: vars.$fontColor;
 }
-
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
-
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-*/
+body a {
+  color: vars.$fontColor;
+}
+body a:hover {
+  color: vars.$fontColor;
+}

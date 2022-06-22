@@ -1,0 +1,102 @@
+@use 'src/styles/vars';
+
+.card__wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 1rem #1d2327;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 2rem;
+  text-align: center;
+  background-color: vars.$mainBackground;
+  border-radius: 1rem;
+
+  &__wrapper__h3 {
+    font-family: 'Courgette', cursive;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top:1rem ;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+  &__text h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &__text h5 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    padding: 1rem;
+  }
+  &__text p {
+    margin: 1rem;
+  }
+  span {
+    text-align: right;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  .card__wrapper__h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card__wrapper {
+    display: flex;
+    justify-content: center;
+
+    &__h3 {
+      font-size: 2rem;
+      margin-bottom: 0rem;
+    }
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    &__image {
+      border-radius: 1rem 1rem 0rem 0rem;
+    }
+    &__text {
+      height: 100%;
+      width: 50%;
+      padding: 0rem;
+      border-radius: 0rem 1rem 1rem 0rem;
+    }
+    &__wrapper__mode {
+      border-right: 1px solid vars.$fontColor;
+      width: 50%;
+    }
+    &__wrapper__add {
+      border-left: 1px solid vars.$fontColor;
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1335px) {
+  .card {
+    flex-direction: row;
+
+    &__image {
+      width: 50%;
+      border-radius: 1rem 0rem 0rem 1rem;
+    }
+  }
+}

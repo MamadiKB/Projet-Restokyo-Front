@@ -1,0 +1,86 @@
+@use 'src/styles/vars';
+
+.serchbar {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem 1rem 1rem 1rem;
+  box-shadow: 0px 0px 1rem #1d2327;
+
+  &__wrapper__form {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 1rem;
+  }
+  &__select__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+  }
+  &__submit {
+    display: flex;
+    justify-content: center;
+    &__button {
+      height: 3rem;
+      width: 8rem;
+      font-size: 1.2rem;
+      border: none;
+      outline: none;
+      border-radius: 1rem;
+      margin-left: 0rem;
+      background-color: vars.$fristColor;
+      color: #F2EEE4;
+    }
+  }
+
+  .ui.selection.dropdown {
+    background-color: vars.$mainBackground;
+    color: vars.$fontColor;
+    border: 3px solid vars.$redColor2;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    text-align: center;
+  }
+  .visible.menu.transition {
+    background-color: vars.$mainBackground;
+  }
+  span.text {
+    color: vars.$fontColor;
+    text-align: center;
+  }
+}
+
+.wrapper__form__submit {
+  height: 2.07rem;
+  width: 4rem;
+  border: none;
+  outline: none;
+  border-radius: 0rem 1rem 1rem 0rem;
+  margin-left: 0rem;
+  background-color: vars.$fristColor;
+  color: vars.$fontColor;
+
+  &:hover {
+    background-color: vars.$hoverFristC;
+  }
+}
+
+@media screen and (max-width: 357px) {
+  .wrapper__form__input {
+    width: 7rem;
+  }
+}
+
+@media screen and (min-width: 879px) {
+
+  .wrapper__form__submit {
+    height: 3.07rem;
+    width: 4rem;
+  }
+  .wrapper__form__input {
+    height: 3rem;
+    width: 25rem;
+  }
+}
