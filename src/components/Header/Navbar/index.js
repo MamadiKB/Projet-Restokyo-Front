@@ -1,7 +1,7 @@
 // == Import
 // -- tool
 import { useDispatch, useSelector } from 'react-redux';
-import { Select } from 'semantic-ui-react';
+import { Select, Icon } from 'semantic-ui-react';
 import { Link, useNavigate } from 'react-router-dom';
 // -- actions
 import { toggelNavMenu, changeSelectSpecialityValue, addSelectSearchValue } from 'src/actions/app';
@@ -101,7 +101,7 @@ const Navbar = () => {
             dispatch(action);
           }}
         />
-        <button className="serchbar__submit__button" type="submit">Rechercher</button>
+        <button className="serchbar__submit__button" type="submit"> <Icon name="search" /> </button>
       </form>
     </div>
   );

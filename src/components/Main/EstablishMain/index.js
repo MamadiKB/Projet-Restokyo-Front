@@ -1,7 +1,7 @@
 // == Imports
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-/* import userimg from 'src/assets/img/user.jpg'; */
+import userimg from 'src/assets/img/user.jpg';
 // -- styles
 import './styles.scss';
 // -- imgs
@@ -10,7 +10,19 @@ import './styles.scss';
 const EstablishMain = ({ listToShow }) => {
   const { slug } = useParams();
   const restaurent = listToShow.filter((item) => item.slug === slug);
+  // console.log(listToShow);
 
+  const comments = restaurent.map((item) => item.comments.map((e) => (
+    <div className="comments__card">
+      <div className="comments__card__user">
+        <img className="comments__card__img" src={e.user.picture} alt="utilisateur" />
+        <h5 className="comments__card__username">{e.user.pseudo}<span>le: 10/06/2022</span></h5>
+      </div>
+      <p>{e.content}</p>
+    </div>
+  )));
+  // console.log(comments);
+  // const showComment = comments.map((item) => console.log(item));
   return (
     <div className="restaurant">
       {restaurent.map((item) => (
@@ -41,35 +53,19 @@ const EstablishMain = ({ listToShow }) => {
               </div>
             </div>
           </section>
+
+          <section className="comments">
+            <h4>Commentaires</h4>
+            <div className="comments__wrapper__form">
+              <form className="comments__form">
+                <textarea className="comments__form__input" name="comment" />
+                <input className="comments__form__submit" type="submit" name="comment" value="Send" />
+              </form>
+            </div>
+            {comments}
+          </section>
         </>
       ))}
-
-      {/*       <section className="comments">
-        <h4>Commentaires</h4>
-        <div className="comments__wrapper__form">
-          <form className="comments__form">
-            <textarea className="comments__form__input" name="comment" />
-            <input className="comments__form__submit" type="submit" name="comment" value="Send" />
-          </form>
-        </div>
-        <div className="comments__card">
-          <div className="comments__card__user">
-            <img className="comments__card__img" src={userimg} alt="utilisateur" />
-            <h5 className="comments__card__username">Nom d'utilisateur<span>le: 10/06/2022</span></h5>
-          </div>
-          <p>Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus.
-          </p>
-        </div>
-        <div className="comments__card">
-          <div className="comments__card__user">
-            <img className="comments__card__img" src={userimg} alt="utilisateur" />
-            <h5 className="comments__card__username">Nom d'utilisateur<span>le: 10/06/2022</span></h5>
-          </div>
-          <p>Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus.
-          </p>
-        </div>
-      </section>
- */}
     </div>
   );
 };

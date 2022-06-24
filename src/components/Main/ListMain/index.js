@@ -13,6 +13,7 @@ const MainList = ({ listToShow }) => {
   const byDistrict = listToShow.filter((item) => item.district.name === slug);
 
   // -- if th route have a :slug is for district list
+
   if (slug) {
     return (
       <div className="card__list__wrapper">

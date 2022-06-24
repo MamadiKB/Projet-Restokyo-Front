@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // -- components
 import Header from 'src/components/Header';
 import Modal from 'src/components/Modal';
+import NotiftModal from 'src/components/Modal/NotifModal';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
 
@@ -19,6 +20,7 @@ import { saveWhenRefresh, ifTokenWhenRefresh } from 'src/actions/connect';
 import { changeSelectSpecialityValue, addSelectSearchValue } from 'src/actions/app';
 // -- styles
 import 'semantic-ui-css/semantic.min.css';
+
 
 // == Composant
 function App() {
@@ -52,6 +54,7 @@ function App() {
 
   return (
     <div className="app">
+      <NotiftModal />
       <Header />
       <Modal />
       <Main />

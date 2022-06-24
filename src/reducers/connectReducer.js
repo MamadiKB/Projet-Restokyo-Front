@@ -8,6 +8,7 @@ import {
   SAVE_NEW_USER,
   IF_TOKEN_WHEN_REFRESH,
   LOG_OUT,
+  CLOSE_NOTIF_MODAL,
 } from 'src/actions/connect';
 
 const initialState = {
@@ -23,7 +24,8 @@ const initialState = {
   isLogged: false,
   // -- user info
   user: [],
-
+  // -- for successful registration Modal
+  isSingIn: false,
   // contenu du champ email
   emailSingIn: '',
   // contenu du champ password
@@ -87,6 +89,12 @@ const ConnestReducer = (state = initialState, action = {}) => {
         email: '',
         password: '',
         connectIsOpen: false,
+        isSingIn: true,
+      };
+    case CLOSE_NOTIF_MODAL:
+      return {
+        ...state,
+        isSingIn: false,
       };
     default:
       return state;
