@@ -37,7 +37,9 @@ const Navbar = () => {
   return (
     <div className="nav__wrapper">
       <nav className={cssNav}>
-        <img src={ResTokyologo} alt="restokyo logo" className="nav__logo" />
+        <Link to="/">
+          <img src={ResTokyologo} alt="restokyo logo" className="nav__logo" />
+        </Link>
         <ul className={cssNavMenu}>
           <li className="nav__item">
             <Link
@@ -83,6 +85,7 @@ const Navbar = () => {
           <div className="line__3" />
         </div>
       </nav>
+
       <form
         className="serchbar"
         onSubmit={(event) => {
@@ -92,9 +95,10 @@ const Navbar = () => {
           navigate(`tags/${researchValue.specialityValue}`);
         }}
       >
+        <p className="serchbar__p">J'ai faim ! J'ai envie de : </p>
         <Select
           className="serchbar__select"
-          placeholder="Tags"
+          placeholder="Spécialités"
           options={tagsSelectOption}
           onChange={(event) => {
             const action = changeSelectSpecialityValue(event.target.textContent);

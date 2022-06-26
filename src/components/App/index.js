@@ -21,7 +21,6 @@ import { changeSelectSpecialityValue, addSelectSearchValue } from 'src/actions/a
 // -- styles
 import 'semantic-ui-css/semantic.min.css';
 
-
 // == Composant
 function App() {
   const dispatch = useDispatch();

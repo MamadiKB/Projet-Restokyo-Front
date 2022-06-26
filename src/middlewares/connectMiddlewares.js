@@ -16,7 +16,7 @@ const connectMiddlewares = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          // console.log(response.data.user);
+          // console.log(response);
           // const { token } = response.data;
           // const user = jwt(token);
           // console.log(user);

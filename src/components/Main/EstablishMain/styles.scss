@@ -69,7 +69,7 @@ main {
       width: 50%;
     }
     &__img {
-      max-width: 75%;
+      max-width: 65%;
     }
     &__info {
       display: flex;
@@ -97,7 +97,7 @@ main {
   border-radius: 1rem;
   padding: 1rem 1rem 0rem 1rem;
   max-width: 125vh;
-  margin: auto;
+  margin: 1rem 5rem;
 
   &__card {
     display: flex;
@@ -132,6 +132,10 @@ main {
       font-size: 0.8rem;
       color: #f2eee4a8;
     }
+
+    & p{
+      margin-left: 12%;
+    }
   }
 
   &__form {
@@ -143,7 +147,7 @@ main {
       border: 2px rgba(0, 0, 0, 0.5);
       background: rgba(0, 0, 0, 0.5);
       height: 5rem;
-      width: 18rem;
+      min-width: 60%;
       padding: 0.5rem;
       color: #F2EEE4;
       margin-bottom: 0.5rem;
@@ -153,16 +157,18 @@ main {
       background: rgba(0, 0, 0, 0.5);
       color: #F2EEE4;
       height: 3rem;
-      width: 4rem;
+      width: 6rem;
       border-radius: 0.5rem;
+
     }
   }
-
-
 }
 
 
-
+.comments__form__select.css-b62m3t-container {
+  margin: 0.5rem;
+  color: black;
+}
 
 
 

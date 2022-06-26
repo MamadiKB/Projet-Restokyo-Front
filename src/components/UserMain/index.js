@@ -2,7 +2,9 @@
 // import { useDispatch } from 'react-redux';
 // -- tool
 import { useSelector } from 'react-redux';
-
+import fav1 from 'src/assets/img/imgSlider.jpg';
+import fav2 from 'src/assets/img/imgSlider2.jpg';
+import fav3 from 'src/assets/img/imgSlider3.jpg';
 // -- styles
 import './styles.scss';
 // -- components
@@ -30,10 +32,10 @@ const UserMain = () => {
           {/* <button className="card__user__edit" type="button">edit</button> */}
         </div>
       </div>
-      {/* <h1 className="card__user__h1">Favoris</h1>
+      <h1 className="card__user__h1">Favoris</h1>
       <div className="card__fav__wrapper">
         <article className="card__fav">
-          <img className="card__fav__image" src={imgFav} alt="etablissement" />
+          <img className="card__fav__image" src={fav1} alt="etablissement" />
           <div className="card__fav__text">
             <h4>favoris name</h4>
             <h5>type</h5>
@@ -44,7 +46,7 @@ const UserMain = () => {
           <div className="card__fav__stats" />
         </article>
         <article className="card__fav">
-          <img className="card__fav__image" src={imgFav} alt="etablissement" />
+          <img className="card__fav__image" src={fav2} alt="etablissement" />
           <div className="card__fav__text">
             <h4>favoris name</h4>
             <h5>type</h5>
@@ -55,7 +57,7 @@ const UserMain = () => {
           <div className="card__fav__stats" />
         </article>
         <article className="card__fav">
-          <img className="card__fav__image" src={imgFav} alt="etablissement" />
+          <img className="card__fav__image" src={fav3} alt="etablissement" />
           <div className="card__fav__text">
             <h4>favoris name</h4>
             <h5>type</h5>
@@ -65,7 +67,7 @@ const UserMain = () => {
           </div>
           <div className="card__fav__stats" />
         </article>
-      </div> */}
+      </div>
     </main>
   );
 };

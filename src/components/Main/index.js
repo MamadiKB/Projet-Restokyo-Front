@@ -27,9 +27,9 @@ const Main = () => {
   const tagsList = useSelector((state) => state.tagsReducer.tagsList);
   const userInfo = useSelector((state) => state.connectReducer.user);
   // -- for restaurantsList
-  const restaurantsList = etablishmentsList.filter((item) => item.type === 'restaurant');
+  const restaurantsList = etablishmentsList.filter((item) => item.type === 'Restaurant');
   // -- for izakayaList
-  const izakayaList = etablishmentsList.filter((item) => item.type === 'izakaya');
+  const izakayaList = etablishmentsList.filter((item) => item.type === 'Izakaya');
   // -- slice all etablishmentsList for get 3 last etablissements
   const lastEstablishments = etablishmentsList.slice(etablishmentsList.length - 3);
 

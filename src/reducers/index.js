@@ -8,6 +8,7 @@ import searchBarReducer from './searchBarReducer';
 import districtsReducer from './districtsReducer';
 import establishmentsReducer from './establishmentsReducer';
 import tagsReducer from './tagsReducer';
+import commentsReducer from './commentsReducer';
 
 const rootReducer = combineReducers({
   // name in state: reducers
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   districtsReducer,
   establishmentsReducer,
   tagsReducer,
+  commentsReducer,
 
 });
 

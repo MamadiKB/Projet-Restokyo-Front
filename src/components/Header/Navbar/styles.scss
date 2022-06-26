@@ -184,7 +184,14 @@ nav.nav--collapse {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    z-index: 20;
+
   }
+}
+p.serchbar__p {
+  margin: 0rem;
+  font-family: 'Courgette';
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 459px) {

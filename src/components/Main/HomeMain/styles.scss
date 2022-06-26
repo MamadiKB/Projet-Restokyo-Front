@@ -90,12 +90,29 @@
   }
 }
 
-@media screen and (min-width: 1335px) {
+@media screen and (min-width: 1135px) {
   .card {
     flex-direction: row;
+    height: 15rem;
+    overflow: hidden;
 
     &__image {
       width: 50%;
+      min-height: 15rem;
+      border-radius: 1rem 0rem 0rem 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1472px) {
+  .card {
+    flex-direction: row;
+    height: 17rem;
+    overflow: hidden;
+
+    &__image {
+      width: 50%;
+      min-height: 17rem;
       border-radius: 1rem 0rem 0rem 1rem;
     }
   }

@@ -19,6 +19,8 @@ const Header = () => (
         </h1>
       </div>
       <Slider />
+      {/* eslint-disable-next-line max-len */ }
+      <p className="header__wrapper__p">Vous êtes à Tokyo et vous avez une petite faim mais vous ne savez pas où donner de l'assiette ? Comptez sur nous pour vous indiquer quels établissements ont un menu disponible en anglais !</p>
     </section>
     <section className="header__nav">
       <Navbar />
