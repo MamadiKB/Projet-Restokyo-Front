@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 // -- components
 import Header from 'src/components/Header';
 import Modal from 'src/components/Modal';
+import NotiftModal from 'src/components/Modal/NotifModal';
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
-import UserMain from 'src/components/UserMain';
+
 // -- actions
 import {
   fetchEstablishmentsList,
@@ -24,6 +25,8 @@ import 'semantic-ui-css/semantic.min.css';
 function App() {
   const dispatch = useDispatch();
   const jtk = useSelector((state) => state.connectReducer.token);
+  const userInfo = useSelector((state) => state.connectReducer.user);
+
   useEffect(() => {
     dispatch(fetchEstablishmentsList());
     dispatch(fetchDistrictList());
@@ -34,13 +37,15 @@ function App() {
   useEffect(() => {
     const researchSave = JSON.parse(localStorage.getItem('recherch'));
     const jsontS = JSON.parse(localStorage.getItem('jsont'));
-    dispatch(saveWhenRefresh(jsontS));
+    const userS = JSON.parse(localStorage.getItem('user'));
+    dispatch(saveWhenRefresh(jsontS, userS));
     dispatch(changeSelectSpecialityValue(researchSave));
     dispatch(addSelectSearchValue());
   }, []);
 
   useEffect(() => {
     localStorage.setItem('jsont', JSON.stringify(jtk));
+    localStorage.setItem('user', JSON.stringify(userInfo));
     if (jtk) {
       dispatch(ifTokenWhenRefresh());
     }
@@ -48,9 +53,9 @@ function App() {
 
   return (
     <div className="app">
+      <NotiftModal />
       <Header />
       <Modal />
-      {/* <UserMain /> */}
       <Main />
       <Footer />
     </div>

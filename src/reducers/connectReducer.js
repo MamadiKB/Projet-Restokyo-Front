@@ -5,8 +5,10 @@ import {
   CHANGE_FIELD_SING_IN,
   SAVE_USER_TOKEN,
   SAVE_WHEN_REFRESH,
+  SAVE_NEW_USER,
   IF_TOKEN_WHEN_REFRESH,
   LOG_OUT,
+  CLOSE_NOTIF_MODAL,
 } from 'src/actions/connect';
 
 const initialState = {
@@ -22,7 +24,8 @@ const initialState = {
   isLogged: false,
   // -- user info
   user: [],
-
+  // -- for successful registration Modal
+  isSingIn: false,
   // contenu du champ email
   emailSingIn: '',
   // contenu du champ password
@@ -54,7 +57,7 @@ const ConnestReducer = (state = initialState, action = {}) => {
         ...state,
         isLogged: true,
         token: action.token,
-        user: '',
+        user: action.user,
         email: '',
         password: '',
         connectIsOpen: false,
@@ -63,6 +66,7 @@ const ConnestReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         token: action.token,
+        user: action.user,
       };
     case IF_TOKEN_WHEN_REFRESH:
       return {
@@ -77,7 +81,21 @@ const ConnestReducer = (state = initialState, action = {}) => {
         email: '',
         password: '',
       };
-
+    case SAVE_NEW_USER:
+      return {
+        ...state,
+        isLogged: false,
+        user: action.user,
+        email: '',
+        password: '',
+        connectIsOpen: false,
+        isSingIn: true,
+      };
+    case CLOSE_NOTIF_MODAL:
+      return {
+        ...state,
+        isSingIn: false,
+      };
     default:
       return state;
   }

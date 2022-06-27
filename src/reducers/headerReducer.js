@@ -4,8 +4,7 @@ import { TOGGEL_NAV_MENU } from '../actions/app';
 const initialState = {
   // -- nav menus burger display status
   navIsOpen: false,
-  // -- modal connection/registration display status
-  ConnectIsOpen: false,
+
 };
 
 const headerReducer = (state = initialState, action = {}) => {
@@ -18,6 +17,7 @@ const headerReducer = (state = initialState, action = {}) => {
         navIsOpen: !state.navIsOpen,
       };
     default:
+
       return state;
   }
 };

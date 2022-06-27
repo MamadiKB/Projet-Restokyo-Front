@@ -11,7 +11,7 @@ const HomeMain = ({ lastEstablishments, bestEstablishmentsList }) => (
     <div className="card__wrapper__mode">
       <h3 className="card__wrapper__h3">Les établissements à la mode</h3>
       {bestEstablishmentsList.map((item) => (
-        <Link key={item.id} to={item.slug}>
+        <Link key={item.id} to={`etablissement/${item.slug}`}>
           <article key={item.id} className="card">
             <img className="card__image" src={item.picture} alt="etablissement" />
             <div className="card__text">
@@ -28,7 +28,7 @@ const HomeMain = ({ lastEstablishments, bestEstablishmentsList }) => (
     <div className="card__wrapper__add">
       <h3 className="card__wrapper__h3">Les derniers ajouts</h3>
       {lastEstablishments.map((item) => (
-        <Link key={item.id} to={item.slug}>
+        <Link key={item.id} to={`etablissement/${item.slug}`}>
           <article key={item.id} className="card">
             <img className="card__image" src={item.picture} alt="etablissement" />
             <div className="card__text">

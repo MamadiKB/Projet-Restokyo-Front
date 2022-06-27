@@ -2,6 +2,7 @@
 // -- tool
 import PropTypes from 'prop-types';
 import { useParams, Link } from 'react-router-dom';
+import Page404 from '../../Page404';
 
 // -- styles
 import './styles.scss';
@@ -12,7 +13,10 @@ const MainList = ({ listToShow }) => {
   // -- for district display
   const byDistrict = listToShow.filter((item) => item.district.name === slug);
 
-  // -- if th route have a :slug is for district list
+  if (!listToShow) {
+    <Page404 />;
+  }
+  // -- if the route have a :slug is for district list
   if (slug) {
     return (
       <div className="card__list__wrapper">

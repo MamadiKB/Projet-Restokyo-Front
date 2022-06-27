@@ -1,0 +1,147 @@
+@use 'src/styles/vars';
+
+.quatrecentquatre {
+  height: 20rem;
+  margin-top: 5rem;
+  transition: transform .7s ease-in-out;
+  
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__img {
+      display: flex;
+      align-items: center;
+
+    }
+
+    h1.quatrecentquatre  {
+      &__error{
+        font-size: 6rem;
+        padding-top: 9rem;
+        padding-right: 3rem;
+      }
+    }
+    &__title {
+      margin-top: 5rem;
+      h1.quatrecentquatre {
+        &__title {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
+  &__info {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 5rem;
+    font-family: 'Courgette', cursive;
+
+    &__link {
+      text-decoration: underline;
+      color: vars.$fristColor;
+    }
+  }
+}
+
+.quatrecentquatre:hover {
+  transform: rotate(
+    360deg
+  );
+}
+
+@media screen and (max-width: 1115px) {
+  .quatrecentquatre {
+    height: 10rem;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .quatrecentquatre {
+    height: 10rem;
+
+    &__info {
+      font-size: 1.5rem;
+    }
+    &__wrapper {
+
+      h1.quatrecentquatre  {
+        &__error{
+          font-size: 4rem;
+        }
+      }
+      &__title {
+        margin-top: 2rem;
+        h1.quatrecentquatre {
+          &__title {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .quatrecentquatre {
+    height: 8rem;
+
+    &__info {
+      font-size: 1rem;
+    }
+    &__wrapper {
+
+      h1.quatrecentquatre  {
+        &__error{
+          font-size: 2rem;
+        }
+      }
+      &__title {
+        margin-top: 2rem;
+        h1.quatrecentquatre {
+          &__title {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .quatrecentquatre {
+    height: 6rem;
+
+
+    &__info {
+      font-size: 1rem;
+
+    }
+    &__wrapper {
+
+      &__img {
+        flex-direction: column;
+        margin: 0;
+      }
+
+      h1.quatrecentquatre  {
+        &__error{
+          font-size: 2rem;
+          padding: 0rem;
+        }
+      }
+      &__title {
+        margin-top: 2rem;
+        text-align: center;
+        h1.quatrecentquatre {
+          &__title {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
