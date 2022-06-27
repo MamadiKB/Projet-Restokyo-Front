@@ -3,8 +3,6 @@ import axios from 'axios';
 import { ADD_COMMENT } from 'src/actions/comments';
 
 const commentsMiddlewares = (store) => (next) => (action) => {
-  // console.log('action =', action);
-
   switch (action.type) {
     case ADD_COMMENT: {
       const { inputCommentValue, noteValue, establishmentId } = store.getState().commentsReducer;
@@ -18,12 +16,12 @@ const commentsMiddlewares = (store) => (next) => (action) => {
         },
         { headers: { Authorization: `Bearer ${token}` } },
       )
-        .then((response) => {
-          // console.log(response);
+        .then(() => {
+          /* console.log(response); */
         })
         // eslint-disable-next-line no-unused-vars
         .catch((error) => {
-          // console.log(error);
+          /* console.log(error); */
         });
       break;
     }

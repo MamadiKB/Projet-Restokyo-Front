@@ -10,8 +10,11 @@ import {
   changeNoteValue,
   getId,
 } from 'src/actions/comments';
+// 404
+import Page404 from 'src/components/Page404';
 // -- styles
 import './styles.scss';
+
 // -- imgs
 
 // == Composant
@@ -20,7 +23,7 @@ const EstablishMain = ({ listToShow }) => {
   const dispatch = useDispatch();
   const commentValue = useSelector((state) => state.commentsReducer.commentValue);
   const restaurent = listToShow.filter((item) => item.slug === slug);
-
+  /* console.log(restaurent); */
   const noteOptions = [
     { value: '0', label: '0' },
     { value: '1', label: '1' },
@@ -40,6 +43,11 @@ const EstablishMain = ({ listToShow }) => {
     </div>
   )));
 
+  if (restaurent[0] === undefined) {
+    return (
+      <Page404 />
+    );
+  }
   return (
     <div className="restaurant">
       {restaurent.map((item) => (

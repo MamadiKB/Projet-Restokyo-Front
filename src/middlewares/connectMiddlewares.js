@@ -3,8 +3,6 @@ import axios from 'axios';
 import { LOG_IN, saveUserToken } from 'src/actions/connect';
 
 const connectMiddlewares = (store) => (next) => (action) => {
-  // console.log('action =', action);
-
   switch (action.type) {
     case LOG_IN: {
       const { email, password } = store.getState().connectReducer;

@@ -7,7 +7,6 @@ import './styles.scss';
 
 // == Composant
 const TagsListMain = ({ listToShow }) => {
-  // console.log(listToShow[0]);
   if (listToShow[0].length === 0) {
     return (
       <div className="card__list__wrapper">

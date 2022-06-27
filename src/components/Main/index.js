@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 
 // -- components
 import Aside from 'src/components/Aside';
+import Page404 from 'src/components/Page404';
 // -- Main components
 import HomeMain from 'src/components/Main/HomeMain';
 import ListMain from 'src/components/Main/ListMain';
@@ -32,7 +33,7 @@ const Main = () => {
   const izakayaList = etablishmentsList.filter((item) => item.type === 'Izakaya');
   // -- slice all etablishmentsList for get 3 last etablissements
   const lastEstablishments = etablishmentsList.slice(etablishmentsList.length - 3);
-
+  /*   console.log('oui'); */
   // -- for research by tags
 
   const researchValue = useSelector((state) => state.searchBarReducer.searchValue.speciality);
@@ -45,7 +46,8 @@ const Main = () => {
       <Routes>
 
         <Route path="/" element={<HomeMain lastEstablishments={lastEstablishments} bestEstablishmentsList={bestEstablishmentsList} />} />
-        <Route path="/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
+        <Route path="etablissement/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
+        <Route path="/etablissement/*" element={<Page404 />} />
 
         <Route path="restaurant/list" element={<ListMain listToShow={restaurantsList} />} />
         <Route path="restaurant/list/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
@@ -55,11 +57,14 @@ const Main = () => {
 
         <Route path="quartier/:slug" element={<ListMain listToShow={etablishmentsList} />} />
         <Route path="quartier/:slug/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
+        <Route path="quartier/*" element={<Page404 />} />
 
         <Route path={`tags/${researchValue}`} element={<TagsListMain listToShow={tagList} />} />
         <Route path={`tags/${researchValue}/:slug/list/:slug`} element={<EstablishMain listToShow={etablishmentsList} />} />
+        <Route path="tags/*" element={<Page404 />} />
 
         <Route path={`mon-compte/${userInfo.pseudo}`} element={<UserMain />} />
+        <Route path="/*" element={<Page404 />} />
 
       </Routes>
     </main>
