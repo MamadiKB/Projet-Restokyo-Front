@@ -12,9 +12,10 @@ import HomeMain from 'src/components/Main/HomeMain';
 import ListMain from 'src/components/Main/ListMain';
 import TagsListMain from 'src/components/Main/TagsListMain';
 import EstablishMain from 'src/components/Main/EstablishMain';
+import UserMain from 'src/components/UserMain';
+import Contact from 'src/components/Contact';
 // -- styles
 import './styles.scss';
-import UserMain from '../UserMain';
 
 // == Composant
 const Main = () => {
@@ -33,7 +34,6 @@ const Main = () => {
   const izakayaList = etablishmentsList.filter((item) => item.type === 'Izakaya');
   // -- slice all etablishmentsList for get 3 last etablissements
   const lastEstablishments = etablishmentsList.slice(etablishmentsList.length - 3);
-  /*   console.log('oui'); */
   // -- for research by tags
 
   const researchValue = useSelector((state) => state.searchBarReducer.searchValue.speciality);
@@ -64,6 +64,9 @@ const Main = () => {
         <Route path="tags/*" element={<Page404 />} />
 
         <Route path={`mon-compte/${userInfo.pseudo}`} element={<UserMain />} />
+
+        <Route path="contact/" element={<Contact />} />
+
         <Route path="/*" element={<Page404 />} />
 
       </Routes>

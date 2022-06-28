@@ -5,7 +5,7 @@ import { FETCH_TAGS_LIST, saveTagsList } from 'src/actions/fetch';
 const tagsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_TAGS_LIST:
-      axios.get('http://localhost:8000/api/v1/tags')
+      axios.get('http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/api/v1/tags')
         .then((response) => {
           // console.log(response.data);
           store.dispatch(saveTagsList(response.data));

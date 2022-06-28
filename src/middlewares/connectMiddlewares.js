@@ -7,7 +7,7 @@ const connectMiddlewares = (store) => (next) => (action) => {
     case LOG_IN: {
       const { email, password } = store.getState().connectReducer;
       axios.post(
-        'http://localhost:8000/api/v1/login_check',
+        'http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/api/v1/login_check',
         {
           username: email,
           password: password,

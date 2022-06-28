@@ -34,7 +34,7 @@ const ButtonSettings = () => {
       <>
         <li className="nav__item">
           <a
-            href="http://localhost:8000/login?controller_name=BackController"
+            href="http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/login?controller_name=BackController"
             target="_blank"
             className="nav__link__settings__profil"
             rel="noreferrer"

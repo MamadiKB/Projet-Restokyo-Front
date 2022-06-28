@@ -7,7 +7,7 @@ const commentsMiddlewares = (store) => (next) => (action) => {
     case ADD_COMMENT: {
       const { inputCommentValue, noteValue, establishmentId } = store.getState().commentsReducer;
       const { token } = store.getState().connectReducer;
-      const url = `http://localhost:8000/api/v1/establishment/${establishmentId}/comments`;
+      const url = `http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/v1/establishment/${establishmentId}/comments`;
       axios.post(
         url,
         {
