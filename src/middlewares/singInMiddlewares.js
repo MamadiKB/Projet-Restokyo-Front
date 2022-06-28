@@ -9,7 +9,7 @@ const singInMiddlewares = (store) => (next) => (action) => {
     case SING_IN: {
       const { emailSingIn, passwordSingIn, usernameSingIn } = store.getState().connectReducer;
       axios.post(
-        'http://localhost:8000/api/v1/profil/ajouter',
+        'http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/api/v1/profil/ajouter',
         {
           email: emailSingIn,
           password: passwordSingIn,

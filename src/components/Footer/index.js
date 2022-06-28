@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // == Import
 import './styles.scss';
 
@@ -7,7 +9,7 @@ const Footer = () => (
     <div className="footer__links">
       <a href="">Plan du site</a>
       <a href="">Mention légales</a>
-      <a href="">Contact</a>
+      <Link to="/contact" href="">Contact</Link>
     </div>
   </footer>
 );
