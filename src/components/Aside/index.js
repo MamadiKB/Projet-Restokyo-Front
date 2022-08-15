@@ -22,10 +22,11 @@ const Aside = ({ districtsList }) => {
               <Link
                 key={item.id}
                 to={`quartier/${item.slug}`}
-                onClick={(event) => {
+/*                 onClick={(event) => {
+                  console.log(event.target.textContent);
                   const action = addAsideSelectValue(event.target.textContent);
                   dispatch(action);
-                }}
+                }} */
               >
                 <p>{item.name} / {item.kanji}</p>
               </Link>

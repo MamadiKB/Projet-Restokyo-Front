@@ -9,6 +9,7 @@ import { toggelNavMenu, changeSelectSpecialityValue, addSelectSearchValue } from
 import ResTokyologo from 'src/assets/img/mainLogo.png';
 import ButtonSettings from 'src/components/Header/Navbar/ButtonSettings';
 // -- styles
+
 import './styles.scss';
 
 // == Composant
@@ -105,6 +106,7 @@ const Navbar = () => {
             dispatch(action);
           }}
         />
+
         <button className="serchbar__submit__button" type="submit"> <Icon name="search" /> </button>
       </form>
     </div>

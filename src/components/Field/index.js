@@ -1,10 +1,8 @@
+// == Import
 import PropTypes from 'prop-types';
-
+// -- styles
 import './field.scss';
-
-/**
- * A field to be used inside a form : label and input
- */
+// == Component
 const Field = ({
   identifier,
   placeholder,
@@ -41,21 +39,20 @@ const Field = ({
 };
 
 Field.propTypes = {
-  // JSDoc : documentation d'un composant ou d'une fonction
-  /** identifier for the input : used both for name and id => must be unique */
-  identifier: PropTypes.string.isRequired,
-  /** text used as placeholder */
-  placeholder: PropTypes.string.isRequired,
-  /** text used as label */
-  label: PropTypes.string.isRequired,
-  /** type of the input */
-  type: PropTypes.string,
-  /** text used as value for the input */
-  value: PropTypes.string,
-  /** called when onChange event is received by the input, two parameters :
+  /** Field component props
+   * identifier: for the input  used both for name and id => must be unique
+   * placeholder: text used as placeholder
+   * label: type: text used as label
+   * value: text used as value for the input
+   * changeField: function called when onChange event is received by the input, two parameters :
    * - identifier
    * - new value
    */
+  identifier: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  value: PropTypes.string,
   changeField: PropTypes.func.isRequired,
 };
 

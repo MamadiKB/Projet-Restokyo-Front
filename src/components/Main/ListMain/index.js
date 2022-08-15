@@ -9,12 +9,15 @@ import './styles.scss';
 
 // == Composant
 const MainList = ({ listToShow }) => {
+  /* console.log(listToShow); */
   const { slug } = useParams();
   // -- for district display
   const byDistrict = listToShow.filter((item) => item.district.name === slug);
 
-  if (!listToShow) {
-    <Page404 />;
+  if (slug && byDistrict[0] === undefined) {
+    return (
+      <Page404 />
+    );
   }
   // -- if the route have a :slug is for district list
   if (slug) {

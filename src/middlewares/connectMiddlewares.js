@@ -1,13 +1,14 @@
 import axios from 'axios';
 // import jwt from 'jwt-decode';
-import { LOG_IN, saveUserToken } from 'src/actions/connect';
+import { LOG_IN, saveUserToken, errorLogIn } from 'src/actions/connect';
+import apiLocal from 'src/utils/api';
 
 const connectMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN: {
       const { email, password } = store.getState().connectReducer;
       axios.post(
-        'http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/api/v1/login_check',
+        `${apiLocal}login_check`,
         {
           username: email,
           password: password,
@@ -22,7 +23,7 @@ const connectMiddlewares = (store) => (next) => (action) => {
         })
         // eslint-disable-next-line no-unused-vars
         .catch((error) => {
-          // console.log(error);
+          store.dispatch(errorLogIn());
         });
       break;
     }

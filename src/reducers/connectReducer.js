@@ -9,6 +9,8 @@ import {
   IF_TOKEN_WHEN_REFRESH,
   LOG_OUT,
   CLOSE_NOTIF_MODAL,
+  ERROR_LOG_IN,
+  ERROR_SING_IN,
 } from 'src/actions/connect';
 
 const initialState = {
@@ -16,7 +18,7 @@ const initialState = {
   connectIsOpen: false,
   // email feald
   email: '',
-  // contenu du champ password
+  // password feald
   password: '',
   // JWT
   token: null,
@@ -26,13 +28,15 @@ const initialState = {
   user: [],
   // -- for successful registration Modal
   isSingIn: false,
-  // contenu du champ email
+  //  email feald sing in
   emailSingIn: '',
-  // contenu du champ password
+  //  password eald sing in
   passwordSingIn: '',
-  // pseudo de l'utilisateur
+  // pseudo
   usernameSingIn: '',
-
+  // error messages
+  errorLogIn: false,
+  errorSingIn: false,
 };
 
 const ConnestReducer = (state = initialState, action = {}) => {
@@ -95,6 +99,16 @@ const ConnestReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isSingIn: false,
+      };
+    case ERROR_LOG_IN:
+      return {
+        ...state,
+        errorLogIn: true,
+      };
+    case ERROR_SING_IN:
+      return {
+        ...state,
+        errorSingIn: true,
       };
     default:
       return state;

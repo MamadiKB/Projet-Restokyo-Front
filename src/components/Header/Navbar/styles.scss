@@ -55,6 +55,8 @@ nav.nav--collapse {
   &__link {
     padding: 0.5rem;
     font-size: 1.5rem;
+    background-color: black;
+    color: vars.$fontColor;
 
     &:hover {
     text-shadow: 0 0 10px #FFE0B5,
@@ -211,11 +213,12 @@ p.serchbar__p {
   }
 
   &__submit__button {
+    border: none;
     height: 3rem;
-    // width: 8rem;
-    font-size: 1.2rem;
+    width: 3rem;
     border-radius: 50%;
     margin: 1rem;
+    font-size: 1.2rem;
     background-color: vars.$fristColor;
     color: #F2EEE4;
   }
@@ -235,3 +238,10 @@ span.text {
   color: #000;
 }
 
+span.connect__error {
+  border: 1px solid red;
+  border-radius: 1rem;
+  margin: 0.7rem;
+  padding: 1rem 1rem;
+  background-color: rgba(255, 0, 0, 0.404);
+}
