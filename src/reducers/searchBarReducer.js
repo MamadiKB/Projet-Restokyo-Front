@@ -11,9 +11,9 @@ import {
 
 const initialState = {
   // -- value of etablishment Select
-  etablishmentValue: '',
+ // etablishmentValue: '',
   // -- value of District Select
-  districtValue: '',
+ // districtValue: '',
   // -- value of Speciality Select
   specialityValue: '',
 

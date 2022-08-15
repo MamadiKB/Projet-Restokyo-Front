@@ -18,15 +18,26 @@ const ConnectModal = () => {
 
   const emailValue = useSelector((state) => state.connectReducer.email);
   const passwordValue = useSelector((state) => state.connectReducer.password);
-
   const emailSingInValue = useSelector((state) => state.connectReducer.emailSingIn);
   const passwordSingInValue = useSelector((state) => state.connectReducer.passwordSingIn);
   const usernameSingInValue = useSelector((state) => state.connectReducer.usernameSingIn);
-
   const connectToggle = useSelector((state) => state.connectReducer.connectIsOpen);
+  const errorLogIn = useSelector((state) => state.connectReducer.errorLogIn);
+  const errorSingIn = useSelector((state) => state.connectReducer.errorSingIn);
+
   let cssConnect = 'conect--off';
   if (connectToggle) {
     cssConnect = 'conect';
+  }
+
+  let errorConnect = '';
+  if (errorLogIn) {
+    errorConnect = <span className="connect__error">E-mail ou mot de passe incorrect</span>;
+  }
+
+  let errorlog = '';
+  if (errorSingIn) {
+    errorlog = <span className="connect__error">E-mail ou mot de passe incorrect</span>;
   }
 
   return (
@@ -44,8 +55,8 @@ const ConnectModal = () => {
           X
         </button>
         <h4 className="conect__h4">Connexion</h4>
+        {errorConnect}
         <form className="conect__form">
-
           <div className="conect__div">
             <Field
               identifier="email"
@@ -57,7 +68,6 @@ const ConnectModal = () => {
               value={emailValue}
             />
           </div>
-
           <div className="conect__div">
             <Field
               identifier="password"
@@ -70,7 +80,6 @@ const ConnectModal = () => {
               value={passwordValue}
             />
           </div>
-
           <div className="conect__div">
             <button
               className="conect__button"
@@ -88,6 +97,7 @@ const ConnectModal = () => {
       </div>
       <div className="form__wrapper">
         <h4 className="conect__h4">Inscription</h4>
+        {errorlog}
         <form className="singin__form">
 
           <div className="conect__div">
@@ -102,7 +112,6 @@ const ConnectModal = () => {
               value={usernameSingInValue}
             />
           </div>
-
           <div className="conect__div">
             <Field
               identifier="emailSingIn"
@@ -115,7 +124,6 @@ const ConnectModal = () => {
               value={emailSingInValue}
             />
           </div>
-
           <div className="conect__div">
             <Field
               identifier="passwordSingIn"
@@ -129,7 +137,6 @@ const ConnectModal = () => {
               value={passwordSingInValue}
             />
           </div>
-
           <div className="singin__div">
             <button
               className="singin__button"

@@ -1,13 +1,14 @@
 import axios from 'axios';
 // import jwt from 'jwt-decode';
 import { ADD_COMMENT } from 'src/actions/comments';
+import apiLocal from 'src/utils/api';
 
 const commentsMiddlewares = (store) => (next) => (action) => {
   switch (action.type) {
     case ADD_COMMENT: {
       const { inputCommentValue, noteValue, establishmentId } = store.getState().commentsReducer;
       const { token } = store.getState().connectReducer;
-      const url = `http://mickaelzimmermann-server.eddi.cloud/projet-restokyo-back/public/v1/establishment/${establishmentId}/comments`;
+      const url = `${apiLocal}establishment/${establishmentId}/comments`;
       axios.post(
         url,
         {

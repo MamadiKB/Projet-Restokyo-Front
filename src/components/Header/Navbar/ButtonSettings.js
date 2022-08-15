@@ -14,21 +14,6 @@ const ButtonSettings = () => {
   const isLogged = useSelector((state) => state.connectReducer.isLogged);
   const roles = useSelector((state) => state.connectReducer.user.roles);
 
-  if (roles === undefined) {
-    return (
-      <li className="nav__item">
-        <a
-          href="#"
-          className="nav__link nav__link__connexion"
-          onClick={() => {
-            dispatch(toggleConnectModal());
-          }}
-        >
-          Connexion / Inscription
-        </a>
-      </li>
-    );
-  }
   if (isLogged && roles[0] === 'ROLE_ADMIN') {
     return (
       <>
@@ -57,7 +42,7 @@ const ButtonSettings = () => {
     );
   }
 
-  if (isLogged) {
+  if (isLogged && roles[0] === 'ROLE_USER') {
     return (
       <>
         <li className="nav__item">
@@ -85,15 +70,15 @@ const ButtonSettings = () => {
   }
   return (
     <li className="nav__item">
-      <a
-        href="#"
+      <button
+        type="button"
         className="nav__link nav__link__connexion"
         onClick={() => {
           dispatch(toggleConnectModal());
         }}
       >
         Connexion / Inscription
-      </a>
+      </button>
     </li>
   );
 };

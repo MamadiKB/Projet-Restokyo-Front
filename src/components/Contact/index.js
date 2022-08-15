@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import mika from 'src/assets/img/MikaDraw.jpg';
 import ken from 'src/assets/img/KenDraw.jpg';
 import nico from 'src/assets/img/NicoDraw.jpg';

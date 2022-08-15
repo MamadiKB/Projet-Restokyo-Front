@@ -47,7 +47,6 @@ const Main = () => {
 
         <Route path="/" element={<HomeMain lastEstablishments={lastEstablishments} bestEstablishmentsList={bestEstablishmentsList} />} />
         <Route path="etablissement/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
-        <Route path="/etablissement/*" element={<Page404 />} />
 
         <Route path="restaurant/list" element={<ListMain listToShow={restaurantsList} />} />
         <Route path="restaurant/list/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
@@ -57,11 +56,9 @@ const Main = () => {
 
         <Route path="quartier/:slug" element={<ListMain listToShow={etablishmentsList} />} />
         <Route path="quartier/:slug/:slug" element={<EstablishMain listToShow={etablishmentsList} />} />
-        <Route path="quartier/*" element={<Page404 />} />
 
         <Route path={`tags/${researchValue}`} element={<TagsListMain listToShow={tagList} />} />
         <Route path={`tags/${researchValue}/:slug/list/:slug`} element={<EstablishMain listToShow={etablishmentsList} />} />
-        <Route path="tags/*" element={<Page404 />} />
 
         <Route path={`mon-compte/${userInfo.pseudo}`} element={<UserMain />} />
 

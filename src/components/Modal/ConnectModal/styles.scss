@@ -28,10 +28,10 @@
   }
 
   &__div {
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__input {
@@ -64,10 +64,15 @@
     transition: .5s;
   }
   &__p {
-  align-self: flex-start;
-  margin-left: 3rem;
-  transition: .5s;
+    align-self: flex-start;
+    margin-left: 3rem;
+    transition: .5s;
   }
+}
+
+p.conect__error {
+  border: 1px solid red;
+  border-radius: 50%;
 }
 
 .conect--off {
@@ -121,13 +126,13 @@
   }
 
   &__button {
-  height: 2rem;
-  width: 6rem;
-  border: 2px solid vars.$fristColor;
-  background-color: vars.$fristColor;
-  border-radius: 1rem;
-  color: vars.$fontColor;
-  transition: .5s;
+    height: 2rem;
+    width: 6rem;
+    border: 2px solid vars.$fristColor;
+    background-color: vars.$fristColor;
+    border-radius: 1rem;
+    color: vars.$fontColor;
+    transition: .5s;
   }
 
   &__close {
@@ -143,9 +148,9 @@
     transition: .5s;
   }
   &__p {
-  align-self: flex-start;
-  margin-left: 3rem;
-  transition: .5s;
+    align-self: flex-start;
+    margin-left: 3rem;
+    transition: .5s;
   }
 }
 
